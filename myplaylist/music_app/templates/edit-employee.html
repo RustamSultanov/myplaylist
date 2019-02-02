@@ -1,0 +1,156 @@
+{% extends "imp_base.html" %}
+{% load static %}
+ {% block script %}
+
+	<!-- Libs -->
+	<link rel="stylesheet" href="{% static "assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" %}">
+	<link rel="stylesheet" href="{% static "assets/vendor/libs/select2/select2.css" %}">
+	<link rel="stylesheet" href="{% static "assets/vendor/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" %}">
+	<!-- Page -->
+	<link rel="stylesheet" href="{% static "assets/vendor/css/pages/users.css" %}">
+	<link rel="stylesheet" href="{% static "assets/css/custom.css" %}">
+        {% endblock %}
+
+
+{% block content %}
+	
+			<!-- Layout content -->
+			<div class="layout-content">
+<form enctype="multipart/form-data" action="" method="post">
+          {% csrf_token %}
+				<!-- Content -->
+				<div class="container flex-grow-1 container-p-y">
+{% block create %}
+					<h4 class="font-weight-bold py-3 mb-4">
+						Редактирование сотрудника <span class="text-muted">{{ user.get_full_name }}</span>
+					</h4>
+
+					<div class="nav-tabs-top">
+						<ul class="nav nav-tabs">
+							<li class="nav-item">
+								<a class="nav-link active" data-toggle="tab" href="#user-edit-account">Аккунт</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" data-toggle="tab" href="#user-edit-info">Информация</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+
+							<!--Табы раз-->
+							<div class="tab-pane fade show active" id="user-edit-account">
+
+								<div class="card-body">
+
+									<div class="media align-items-center">
+					{% if useraccept.avatar %}	<img src="{{ useraccept.avatar.url }}" alt="" class="d-block ui-w-80">{% else %}{% endif %}
+										<div class="media-body ml-3">
+											<label class="form-label d-block mb-2">Аватар</label>
+											<label class="btn btn-outline-success btn-sm">
+												Загрузить фото
+												{{ form_useraccept.avatar }}
+											</label>&nbsp;
+											<button type="button" class="btn btn-default btn-sm md-btn-flat">Сбросить</button>
+										</div>
+									</div>
+
+								</div>
+								<hr class="border-light m-0">
+								<div class="card-body pb-2">
+{{ form_user.errors }}
+                                  {{ form_useraccept.errors }}
+                                 
+								<!-- 	<div class="form-group">
+										<label class="form-label">Логин</label>
+										<input type="text" class="form-control mb-1" value="ivan1944">
+										<a href="javascript:void(0)" class="small">Сброс пароля</a>
+									</div> -->
+									<div class="form-group">
+										<label class="form-label">Имя</label>
+									{{ form_user.first_name }}	
+									</div>
+									<div class="form-group">
+										<label class="form-label">Фамилия</label>
+										{{ form_user.last_name }}
+									</div>
+									<div class="form-group">
+										<label class="form-label">E-mail</label>
+										{{ form_user.username }}
+										
+									</div>
+									{% endblock %}
+									<div class="form-group">
+										<label class="form-label">Роль</label>
+										{{ form_useraccept.position }}
+										<!-- <select class="custom-select">
+											<option selected>Прораб</option>
+											<option>Author</option>
+											<option>Staff</option>
+											<option>Admin</option>
+										</select> -->
+									</div>
+								</div>
+<!--								<div class="card-body pb-2">
+									<div class="form-group">
+										<label class="custom-control custom-checkbox m-0">
+											<input type="checkbox" class="custom-control-input" checked>
+											<span class="custom-control-label">Verified</span>
+										</label>
+									</div>
+								</div>-->
+							</div>
+
+							<!--Табы два-->
+							<div class="tab-pane fade" id="user-edit-info">
+								<div class="card-body pb-2">
+									<h6 class="mb-4">Социальные сети</h6>
+									<div class="form-group">
+										<label class="form-label">Инстаграмм</label>
+										{{ form_useraccept.social_net }}
+									</div>
+								</div>
+								<hr class="border-light m-0">
+								<div class="card-body pb-2">
+									<h6 class="mb-4">Личные данные</h6>
+									<div class="form-group">
+										<label class="form-label">День рождения</label>
+										{{ form_useraccept.date_birth }}
+									</div>
+									<div class="form-group">
+										<label class="form-label">Гражданство</label>
+										{{ form_useraccept.gov }}
+									</div>
+								</div>
+								<hr class="border-light m-0">
+								<div class="card-body pb-2">
+									<h6 class="mb-4">Контакты</h6>
+									<div class="form-group">
+										<label class="form-label">Телефон</label>
+										{{ form_useraccept.phone_number }}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="text-right mt-3">
+						<input value="Сохранить" type="submit" class="btn btn-success">&nbsp;
+					<a href="{% url 'edit_employee' user.id %}">	<button type="button" class="btn btn-danger">Отменить</button></a>
+					</div>
+				</div></form>
+				<!-- / Content -->
+
+				<!-- Layout footer -->
+				<!-- / Layout footer -->
+			</div>
+			<!-- Layout content -->
+		</div>
+		<!-- / Layout container -->
+
+		{% block script2 %}
+<script src="{% static "assets/vendor/libs/select2/select2.js" %}"></script>
+<script src="{% static "assets/vendor/libs/bootstrap-tagsinput/bootstrap-tagsinput.js" %}"></script>
+
+<!-- Custom -->
+<script src="{% static "assets/js/pages_users_edit.js" %}"></script>{% endblock %}
+{% endblock %}
+

@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#da532c">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+<div id="app">
+  <div class="mobile-nav">
+  <button class="mobile-nav__burger js-mobile-burger">
+    <svg width="18" height="12">
+      <use href="./images/fill.svg#burger"></use>
+    </svg>
+  </button>
+  <a href="/" class="sidebar__logotype logotype">
+    <span class="logotype__visual">
+      Ремонт<br>
+      <b>сделан</b>
+    </span>
+  </a>
+  <span class="profile__img-wrapper">
+    <img src="./images/avatar.png" srcset="./images/avatar@2x.png 2x" width="40" height="40" alt="Аватар юзера">
+  </span>
+</div>
+
+  <div class="layout layout--user">
+    <aside class="sidebar is-mobile">
+  <a href="/" class="sidebar__logotype logotype">
+  <span class="logotype__visual">
+    Ремонт<br>
+    <b>сделан</b>
+  </span>
+  <p class="logotype__description">
+    Онлайн сервис ремонта с защитой сделок
+  </p>
+</a>
+
+  
+
+
+
+<div class="sidebar-nav nav">
+  <ul class="nav__list list-unstyled">
+    
+      <li class="nav__item">
+        <a href="/" class="nav__link">
+          Каталог ремонтов
+        </a>
+      </li>
+    
+      <li class="nav__item">
+        <a href="/" class="nav__link">
+          Онлайн конструктор
+        </a>
+      </li>
+    
+      <li class="nav__item">
+        <a href="/" class="nav__link">
+          Исполнители
+        </a>
+      </li>
+    
+      <li class="nav__item">
+        <a href="/" class="nav__link">
+          О проекте
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+  
+
+<div class="sidebar__profile profile">
+  
+  <header class="profile__header">
+    <span class="profile__img-wrapper">
+      <img src="./images/avatar.png" srcset="./images/avatar@2x.png 2x" width="40" height="40" alt="Аватар юзера">
+    </span>
+    <span class="profile__username">
+      Андрей П.
+    </span>
+  </header>
+  
+
+  
+  <ul class="profile__info-list list-unstyled">
+    
+      <li class="profile__info-item">
+        <a href="/" class="profile__info-link">
+          Заявки -
+          <span class="profile__info-count">2</span>
+        </a>
+      </li>
+    
+      <li class="profile__info-item">
+        <a href="/" class="profile__info-link">
+          Заказы -
+          <span class="profile__info-count">7</span>
+        </a>
+      </li>
+    
+      <li class="profile__info-item">
+        <a href="/" class="profile__info-link">
+          Сообщения -
+          <span class="profile__info-count">25</span>
+        </a>
+      </li>
+    
+  </ul>
+  
+
+  
+  <ul class="profile__control list-unstyled">
+    <li class="profile__control-item">
+      <a href="/settings" class="profile__control-link">Настройки</a>
+    </li>
+    <li class="profile__control-item">
+      <a href="/logout" class="profile__control-link">Выход</a>
+    </li>
+  </ul>
+  
+</div>
+
+</aside>
+
+    
+  <main class="catalog-page catalog">
+    <div class="page-inner page-inner--cabinet">
+      <div class="layout-960">
+        
+
+
+<header>
+  <h3 class="inner-title">Каталог ремонтов</h3>
+</header>
+
+<div class="c-breadcrumb">
+  <ul class="c-breadcrumb__list list-unstyled">
+    
+    <li class="c-breadcrumb__item">
+      <a href="/" class="c-breadcrumb__link">
+        Главная
+      </a>
+    </li>
+    
+    <li class="c-breadcrumb__item">
+      <a href="/" class="c-breadcrumb__link">
+        Каталог ремонтов
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+
+
+<a href="/" class="mobile-navigate">
+  <svg width="16" height="16">
+    <use href="./images/fill.svg#arrow-left"></use>
+  </svg>
+  <span class="mobile-navigate__text">Каталог ремонтов</span>
+</a>
+
+
+<div class="mt-double">
+  <p class="catalog__helper-text">
+    Укажите тип помещения при помощи рубрикатора. Выбирайте ремонт квартиры или
+    указывайте одно помещение.  В результатах поиска представлены предложения
+    компаний с рейтингом и количеством сделок.
+  </p>
+</div>
+
+
+
+<div class="card-tabs c-tabs">
+  <ul class="c-tabs__list">
+    
+    <li class="c-tabs__item">
+      <a href="/" class="c-tabs__link" data-tab="all">
+        <span class="c-tabs__img-wrapper mobile-hidden">
+          <img src="./images/catalog-1.png" alt="Отремонтированная квартира">
+        </span>
+        <h6 class="c-tabs__name">Ремонт квартир &quot;все включено&quot;</h6>
+      </a>
+    </li>
+    
+    <li class="c-tabs__item">
+      <a href="/" class="c-tabs__link" data-tab="once">
+        <span class="c-tabs__img-wrapper mobile-hidden">
+          <img src="./images/catalog-2.png" alt="Отремонтированная квартира">
+        </span>
+        <h6 class="c-tabs__name">Ремонт по одной комнате</h6>
+      </a>
+    </li>
+    
+    <li class="c-tabs__item">
+      <a href="/" class="c-tabs__link" data-tab="kitchen">
+        <span class="c-tabs__img-wrapper mobile-hidden">
+          <img src="./images/catalog-3.png" alt="Отремонтированная квартира">
+        </span>
+        <h6 class="c-tabs__name">Ремонт кухни</h6>
+      </a>
+    </li>
+    
+    <li class="c-tabs__item">
+      <a href="/" class="c-tabs__link" data-tab="bathroom">
+        <span class="c-tabs__img-wrapper mobile-hidden">
+          <img src="./images/catalog-4.png" alt="Отремонтированная квартира">
+        </span>
+        <h6 class="c-tabs__name">Ремонт ванной комнаты и туалета</h6>
+      </a>
+    </li>
+    
+  </ul>
+  <div class="c-tabs__content">
+    <div class="filter-block c-tabs__filter-block mobile-hidden">
+  <div class="input-field">
+    <select>
+      <option value="" disabled="disabled" selected="selected">Фильтрация по рейтингу</option>
+      <option value="1">Фильтрация по рейтингу</option>
+      <option value="2">Иная фильтрация</option>
+      <option value="3">Ещё какая-то</option>
+    </select>
+  </div>
+</div>
+
+    <section id="all" class="tab-inner">
+      
+
+
+
+
+<div class="tab-content__list offers">
+  
+    <a href="/" class="offers__item">
+      <span class="offers__img-wrapper">
+        <img src="./images/float-1.png" alt="Ремонт комнаты">
+      </span>
+      <div class="offers__info-block">
+        <header class="offers__header">
+          <h6 class="offers__name">Квадрим</h6>
+          <span class="offers__description">Ремонт по одной комнате</span>
+          <div class="offers__rating">
+            
+            <div class="rating rating--no-touch" data-rating="5">
+  <ul class="rating__list">
+    
+    <li class="rating__item">
+      <svg width="14" height="14">
+        <use href="./images/nofill.svg#star"></use>
+      </svg>
+    </li>
+    
+    <li class="rating__item">
+      <svg width="14" height="14">
+        <use href="./images/nofill.svg#star"></use>
+      </svg>
+    </li>
+    
+    <li class="rating__item">
+      <svg width="14" height="14">
+        <use href="./images/nofill.svg#star"></use>
+      </svg>
+    </li>
+    
+    <li class="rating__item">
+      <svg width="14" height="14">
+        <use href="./images/nofill.svg#star"></use>
+      </svg>
+    </li>
+    
+    <li class="rating__item">
+      <svg width="14" height="14">
+        <use href="./images/nofill.svg#star"></use>
+      </svg>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </header>
+        <div class="w-50 mobile-hidden">
+          <span class="offers__orders-info">Заказов: 12</span>
+          <br>
+          <span class="offers__region-info">Регион: Москва</span>
+        </div>
+        <span class="offers__price">от 5 000₽/М<sup>2</sup></span>
+      </div>
+    </a>
+  
+    <a href="/" class="offers__item">
+      <span class="offers__img-wrapper">
+        <img src="./images/float-2.png" alt="Ремонт комнаты">
+      </span>
+      <div class="offers__info-block">
+        <header class="offers__header">
+          <h6 class="offers__name">Квадрим</h6>
+          <span class="offers__description">Ремонт по одной комнате</span>
+          <div class="offers__rating">
+            
+            <div class="rating rating--no-touch" data-rating="2">
+  <ul class="rating__list">
+    
+    <li class="rating__item">
+      <svg width="14" height="14">
+        <use href="./images/nofill.svg#star"></use>
+      </svg>
+    </li>
+    
+    <li class="rating__item">
+      <svg width="14" height="14">
+        <use href="./images/nofill.svg#star"></use>
+      </svg>
+    </li>
+    
+    <li class="rating__item">
+      <svg width="14" height="14">
+        <use href="./images/nofill.svg#star"></use>
+      </svg>
+    </li>
+    
+    <li class="rating__item">
+      <svg width="14" height="14">
+        <use href="./images/nofill.svg#star"></use>
+      </svg>
+    </li>
+    
+    <li class="rating__item">
+      <svg width="14" height="14">
+        <use href="./images/nofill.svg#star"></use>
+      </svg>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </header>
+        <div class="w-50 mobile-hidden">
+          <span class="offers__orders-info">Заказов: 12</span>
+          <br>
+          <span class="offers__region-info">Регион: Москва</span>
+        </div>
+        <span class="offers__price">от 15 000₽/М<sup>2</sup></span>
+      </div>
+    </a>
+  
+    <a href="/" class="offers__item">
+      <span class="offers__img-wrapper">
+        <img src="./images/float-3.png" alt="Ремонт комнаты">
+      </span>
+      <div class="offers__info-block">
+        <header class="offers__header">
+          <h6 class="offers__name">Квадрим</h6>
+          <span class="offers__description">Ремонт по одной комнате</span>
+          <div class="offers__rating">
+            
+            <div class="rating rating--no-touch" data-rating="4">
+  <ul class="rating__list">
+    
+    <li class="rating__item">
+      <svg width="14" height="14">
+        <use href="./images/nofill.svg#star"></use>
+      </svg>
+    </li>
+    
+    <li class="rating__item">
+      <svg width="14" height="14">
+        <use href="./images/nofill.svg#star"></use>
+      </svg>
+    </li>
+    
+    <li class="rating__item">
+      <svg width="14" height="14">
+        <use href="./images/nofill.svg#star"></use>
+      </svg>
+    </li>
+    
+    <li class="rating__item">
+      <svg width="14" height="14">
+        <use href="./images/nofill.svg#star"></use>
+      </svg>
+    </li>
+    
+    <li class="rating__item">
+      <svg width="14" height="14">
+        <use href="./images/nofill.svg#star"></use>
+      </svg>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </header>
+        <div class="w-50 mobile-hidden">
+          <span class="offers__orders-info">Заказов: 12</span>
+          <br>
+          <span class="offers__region-info">Регион: Москва</span>
+        </div>
+        <span class="offers__price">от 52 000₽/М<sup>2</sup></span>
+      </div>
+    </a>
+  
+</div>
+
+    </section>
+    <section id="once" class="tab-inner">
+      once
+    </section>
+    <section id="kitchen" class="tab-inner">
+      kitchen
+    </section>
+    <section id="bathroom" class="tab-inner">
+      bathroom
+    </section>
+    <div class="position-center mt-double mb-double">
+      <button class="btn waves-effect btn--more">Загрузить ещё</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+      </div>
+    </div>
+  </main>
+
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="./js/scripts.js"></script>
+</body>
+</html>

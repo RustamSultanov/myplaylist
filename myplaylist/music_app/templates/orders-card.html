@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+
+<html class="material-style">
+
+<head>
+	<title>Login v2 - Pages - Appwork</title>
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+
+	<!-- Icon fonts -->
+	<link rel="stylesheet" href="assets/vendor/fonts/fontawesome.css">
+	<link rel="stylesheet" href="assets/vendor/fonts/ionicons.css">
+	<link rel="stylesheet" href="assets/vendor/fonts/linearicons.css">
+	<link rel="stylesheet" href="assets/vendor/fonts/open-iconic.css">
+	<link rel="stylesheet" href="assets/vendor/fonts/pe-icon-7-stroke.css">
+
+	<!-- Core stylesheets -->
+	<link rel="stylesheet" href="assets/vendor/css/rtl/bootstrap-material.css" class="theme-settings-bootstrap-css">
+	<link rel="stylesheet" href="assets/vendor/css/rtl/appwork-material.css" class="theme-settings-appwork-css">
+	<link rel="stylesheet" href="assets/vendor/css/rtl/theme-corporate-material.css" class="theme-settings-theme-css">
+	<link rel="stylesheet" href="assets/vendor/css/rtl/colors-material.css" class="theme-settings-colors-css">
+	<link rel="stylesheet" href="assets/vendor/css/rtl/uikit.css">
+
+
+	<script src="assets/vendor/js/material-ripple.js"></script>
+	<script src="assets/vendor/js/layout-helpers.js"></script>
+
+	<!-- Theme settings -->
+	<!-- This file MUST be included after core stylesheets and layout-helpers.js in the <head> section
+	<script src="assets/vendor/js/theme-settings.js"></script>
+	<script>
+		window.themeSettings = new ThemeSettings({
+			cssPath: 'assets/vendor/css/rtl/',
+			themesPath: 'assets/vendor/css/rtl/'
+		});
+	</script>
+	-->
+	<!-- Core scripts -->
+	<script src="assets/vendor/js/pace.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Libs -->
+	<link rel="stylesheet" href="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css">
+	<link rel="stylesheet" href="assets/vendor/libs/dragula/dragula.css">
+	<link rel="stylesheet" href="assets/vendor/libs/datatables/datatables.css">
+	<!-- Page -->
+	<link rel="stylesheet" href="assets/vendor/css/pages/projects.css">
+	<link rel="stylesheet" href="assets/vendor/css/pages/chat.css">
+	<link rel="stylesheet" href="assets/css/custom.css">
+
+</head>
+
+<body class="padding-top-navbar">
+<div class="page-loader">
+	<div class="bg-primary"></div>
+</div>
+<!-- Layout wrapper -->
+<div class="layout-wrapper layout-2">
+	<div class="layout-inner">
+
+		<!-- Layout container -->
+		<div class="layout-container">
+			<!-- Layout navbar -->
+			<nav class="navbar fixed-top navbar-expand-lg bg-white">
+				<div class="container">
+
+					<a href="#" class="navbar-brand flex-grow-0 text-large font-weight-bolder line-height-1 py-3 mr-5">
+						<img src="assets/img/logo.png" alt="">
+					</a>
+
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".header-1">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+
+					<div class="header-1 navbar-collapse collapse justify-content-center flex-grow-1 mb-4 mb-lg-0">
+						<div class="navbar-nav navbar-my-menu">
+							<a class="nav-item nav-link active" href="#">Обращения <sup class="text-muted">5</sup></a>
+							<a class="nav-item nav-link" href="#">Заказы <sup class="text-muted">2</sup></a>
+							<a class="nav-item nav-link" href="#">Каталог</a>
+							<a class="nav-item nav-link" href="#">Сотрудники</a>
+							<a class="nav-item nav-link" href="#">Настройки</a>
+						</div>
+					</div>
+
+					<div class="header-1 navbar-collapse collapse justify-content-lg-end flex-grow-0">
+						<div class="nav navbar-nav align-items-lg-center">
+
+							<span class="nav-item">1 250 000 ₽</span>
+							<!-- Search -->
+							<a href="#" class="nav-item nav-link ml-2">
+								<span class="badge badge-primary badge-dot indicator"></span>
+								<i class="far fa-comments navbar-icon align-middle"></i>
+
+							</a>
+
+							<a class="nav-item nav-link dropdown-toggle hide-arrow ml-lg-2" href="#">
+								<span class="badge badge-primary badge-dot indicator"></span>
+								<i class="ion ion-md-notifications-outline navbar-icon align-middle"></i>
+
+								<span class="d-lg-none align-middle">&nbsp; Уведомления</span>
+							</a>
+
+							<div class="demo-navbar-user nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                  <span class="d-inline-flex flex-lg-row-reverse align-items-center align-middle">
+                    <img src="assets/img/avatars/1.png" alt class="d-block ui-w-30 rounded-circle">
+                    <span class="px-1 mr-lg-2 ml-2 ml-lg-0">Иван Никифоров</span>
+                  </span>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right">
+									<a href="javascript:void(0)" class="dropdown-item"><i class="ion ion-ios-person text-lightest"></i> &nbsp; My profile</a>
+									<a href="javascript:void(0)" class="dropdown-item"><i class="ion ion-ios-mail text-lightest"></i> &nbsp; Messages</a>
+									<a href="javascript:void(0)" class="dropdown-item"><i class="ion ion-md-settings text-lightest"></i> &nbsp; Account settings</a>
+									<div class="dropdown-divider"></div>
+									<a href="javascript:void(0)" class="dropdown-item"><i class="ion ion-ios-log-out text-danger"></i> &nbsp; Log Out</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</nav>
+			<!-- / Layout navbar -->
+
+			<!-- Layout content -->
+			<div class="layout-content">
+
+				<!-- Content -->
+				<div class="container flex-grow-1 container-p-y orders-card">
+					<h4 class="py-3 mb-4">
+						<ol class="breadcrumb font-weight-bold m-0">
+							<li class="breadcrumb-item"><a href="javascript:void(0)">Заказы</a></li>
+							<li class="breadcrumb-item active">Заказ: 23433223</small></li>
+						</ol>
+					</h4>
+
+						<!-- Header -->
+						<div class="border-right-0 border-left-0 ui-bordered container-m--x mb-4">
+							<div class="row no-gutters row-bordered row-border-light">
+								<div class="col-md-9">
+									<div class="media-body container-p-x py-4">
+										<div class="d-flex justify-content-between align-items-center mb-1">
+											<div><strong class="text-primary text-large">67%</strong> Завершено</div>
+										</div>
+										<div class="progress" style="height: 4px;">
+											<div class="progress-bar" style="width: 67%;"></div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="container-p-x py-4">
+										<div class="text-muted small">Статус</div>
+										<span class="badge badge-dark">Гарантия</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- / Header -->
+
+						<div class="row">
+							<div class="col-md-8 col-xl-9">
+								<!-- Табы -->
+								<div class="nav-tabs-top mb-4">
+									<ul class="nav nav-tabs">
+										<li class="nav-item">
+											<a class="nav-link active" data-toggle="tab" href="#project-chat">Чат</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#project-stage">Этапы</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#project-address">Адрес</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#project-pay">Оплата</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#project-docs">Смета и документы</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#project-guarantee">Гарантия</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#project-defect">Брак</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#project-appeal">Обращение</a>
+										</li>
+									</ul>
+									<div class="tab-content">
+
+										<!-- Чат -->
+										<div class="tab-pane fade show active" id="project-chat">
+													<!-- `.chat-wrapper` fills all available space of container -->
+												<div class="chat-wrapper" style="min-height: 700px">
+
+														<!-- Make card full height of `.chat-wrapper` -->
+														<div class="card flex-grow-1 position-relative overflow-hidden">
+
+															<!-- Make row full height of `.card` -->
+															<div class="row no-gutters h-100">
+																<div class="chat-sidebox col">
+
+																	<!-- Chat contacts header -->
+																	<div class="flex-grow-0 px-4">
+																		<div class="media align-items-center">
+																			<div class="media-body">
+																				<input type="text" class="form-control chat-search my-3" placeholder="Search...">
+																			</div>
+																			<a href="javascript:void(0)" class="chat-sidebox-toggler d-lg-none d-block text-muted text-large font-weight-light pl-3">&times;</a>
+																		</div>
+																		<hr class="border-light m-0">
+																	</div>
+																	<!-- / Chat contacts header -->
+
+																	<!-- Wrap `.chat-scroll` to properly position scroll area. Remove this wtapper if you don't need scroll -->
+																	<div class="flex-grow-1 position-relative">
+																		<div class="chat-contacts list-group chat-scroll py-3">
+
+																			<!-- Online -->
+																			<a href="javascript:void(0)" class="list-group-item list-group-item-action online">
+																				<img src="assets/img/avatars/2-small.png" class="d-block ui-w-40 rounded-circle" alt="">
+																				<div class="media-body ml-3">
+																					Leon Wilson
+																					<div class="chat-status small"><span class="badge badge-dot"></span>&nbsp; Online</div>
+																				</div>
+																				<div class="badge badge-outline-success">5</div>
+																			</a>
+
+																			<!-- Online -->
+																			<a href="javascript:void(0)" class="list-group-item list-group-item-action online">
+																				<img src="assets/img/avatars/3-small.png" class="d-block ui-w-40 rounded-circle" alt="">
+																				<div class="media-body ml-3">
+																					Allie Rodriguez
+																					<div class="chat-status small"><span class="badge badge-dot"></span>&nbsp; Online</div>
+																				</div>
+																			</a>
+
+																			<!-- Online & Active -->
+																			<a href="javascript:void(0)" class="list-group-item list-group-item-action online active">
+																				<img src="assets/img/avatars/4-small.png" class="d-block ui-w-40 rounded-circle" alt="">
+																				<div class="media-body ml-3">
+																					Kenneth Frazier
+																					<div class="chat-status small"><span class="badge badge-dot"></span>&nbsp; Online</div>
+																				</div>
+																			</a>
+
+																			<!-- Online -->
+																			<a href="javascript:void(0)" class="list-group-item list-group-item-action online">
+																				<img src="assets/img/avatars/5-small.png" class="d-block ui-w-40 rounded-circle" alt="">
+																				<div class="media-body ml-3">
+																					Nellie Maxwell
+																					<div class="chat-status small"><span class="badge badge-dot"></span>&nbsp; Online</div>
+																				</div>
+																				<div class="badge badge-outline-success">2</div>
+																			</a>
+
+																			<!-- Online -->
+																			<a href="javascript:void(0)" class="list-group-item list-group-item-action online">
+																				<img src="assets/img/avatars/6-small.png" class="d-block ui-w-40 rounded-circle" alt="">
+																				<div class="media-body ml-3">
+																					Mae Gibson
+																					<div class="chat-status small"><span class="badge badge-dot"></span>&nbsp; Online</div>
+																				</div>
+																			</a>
+
+																			<!-- Offline -->
+																			<a href="javascript:void(0)" class="list-group-item list-group-item-action">
+																				<img src="assets/img/avatars/7-small.png" class="d-block ui-w-40 rounded-circle" alt=""> 
+																				<div class="media-body ml-3">
+																					Alice Hampton
+																					<div class="chat-status small"><span class="badge badge-dot"></span>&nbsp; Offline</div>
+																				</div>
+																			</a>
+
+																			<!-- Offline -->
+																			<a href="javascript:void(0)" class="list-group-item list-group-item-action">
+																				<img src="assets/img/avatars/8-small.png" class="d-block ui-w-40 rounded-circle" alt=""> 
+																				<div class="media-body ml-3">
+																					Hallie Lewis
+																					<div class="chat-status small"><span class="badge badge-dot"></span>&nbsp; Offline</div>
+																				</div>
+																				<div class="badge badge-outline-success">1</div>
+																			</a>
+
+																			<!-- Offline -->
+																			<a href="javascript:void(0)" class="list-group-item list-group-item-action">
+																				<img src="assets/img/avatars/9-small.png" class="d-block ui-w-40 rounded-circle" alt=""> 
+																				<div class="media-body ml-3">
+																					Amanda Warner
+																					<div class="chat-status small"><span class="badge badge-dot"></span>&nbsp; Offline</div>
+																				</div>
+																			</a>
+
+																			<!-- Offline -->
+																			<a href="javascript:void(0)" class="list-group-item list-group-item-action">
+																				<img src="assets/img/avatars/10-small.png" class="d-block ui-w-40 rounded-circle" alt=""> 
+																				<div class="media-body ml-3">
+																					Wayne Morgan
+																					<div class="chat-status small"><span class="badge badge-dot"></span>&nbsp; Offline</div>
+																				</div>
+																			</a>
+
+																			<!-- Offline -->
+																			<a href="javascript:void(0)" class="list-group-item list-group-item-action">
+																				<img src="assets/img/avatars/11-small.png" class="d-block ui-w-40 rounded-circle" alt=""> 
+																				<div class="media-body ml-3">
+																					Belle Ross
+																					<div class="chat-status small"><span class="badge badge-dot"></span>&nbsp; Offline</div>
+																				</div>
+																			</a>
+
+																			<!-- Offline -->
+																			<a href="javascript:void(0)" class="list-group-item list-group-item-action">
+																				<img src="assets/img/avatars/12-small.png" class="d-block ui-w-40 rounded-circle" alt=""> 
+																				<div class="media-body ml-3">
+																					Arthur Duncan
+																					<div class="chat-status small"><span class="badge badge-dot"></span>&nbsp; Offline</div>
+																				</div>
+																			</a>
+
+																		</div><!-- / .chat-contacts -->
+																	</div>
+
+																</div>
+																<div class="d-flex col flex-column">
+
+																	<!-- Chat header -->
+																	<div class="flex-grow-0 py-3 pr-4 pl-lg-4">
+
+																		<div class="media align-items-center">
+																			<a href="javascript:void(0)" class="chat-sidebox-toggler d-lg-none d-block text-muted text-large px-4 mr-2"><i class="ion ion-md-more"></i></a>
+
+																			<div class="position-relative">
+																				<span class="badge badge-dot badge-success indicator"></span>
+																				<img src="assets/img/avatars/4-small.png" class="ui-w-40 rounded-circle" alt="">
+																			</div>
+																			<div class="media-body pl-3">
+																				<strong>Kenneth Frazier</strong>
+																				<div class="text-muted small"><em>Typing...</em></div>
+																			</div>
+													<!--						<div>
+																				<button type="button" class="btn btn-primary btn-round icon-btn mr-1"><i class="ion ion-ios-call"></i></button>
+																				<button type="button" class="btn btn-secondary btn-round icon-btn mr-1"><i class="ion ion-md-videocam"></i></button>
+																				<button type="button" class="btn btn-default btn-round icon-btn"><i class="ion ion-ios-more"></i></button>
+																			</div>-->
+																		</div>
+
+																	</div>
+																	<hr class="flex-grow-0 border-light m-0">
+																	<!-- / Chat header -->
+
+																	<!-- Wrap `.chat-scroll` to properly position scroll area. Remove this wtapper if you don't need scroll -->
+																	<div class="flex-grow-1 position-relative">
+
+																		<!-- Remove `.chat-scroll` and add `.flex-grow-1` if you don't need scroll -->
+																		<div class="chat-messages chat-scroll p-4">
+
+																			<div class="chat-message-right mb-4">
+																				<div>
+																					<img src="assets/img/avatars/1-small.png" class="ui-w-40 rounded-circle" alt>
+																					<div class="text-muted small text-nowrap mt-2">2:33 am</div>
+																				</div>
+																				<div class="flex-shrink-1 bg-lighter rounded py-2 px-3 mr-3">
+																					<div class="font-weight-semibold mb-1">You</div>
+																					Lorem ipsum dolor sit amet, vis erat denique in, dicunt prodesset te vix.
+																				</div>
+																			</div>
+
+																			<div class="chat-message-left mb-4">
+																				<div>
+																					<img src="assets/img/avatars/4-small.png" class="ui-w-40 rounded-circle" alt>
+																					<div class="text-muted small text-nowrap mt-2">2:34 am</div>
+																				</div>
+																				<div class="flex-shrink-1 bg-lighter rounded py-2 px-3 ml-3">
+																					<div class="font-weight-semibold mb-1">Kenneth Frazier</div>
+																					Sit meis deleniti eu, pri vidit meliore docendi ut, an eum erat animal commodo.
+																				</div>
+																			</div>
+
+																			<div class="chat-message-right mb-4">
+																				<div>
+																					<img src="assets/img/avatars/1-small.png" class="ui-w-40 rounded-circle" alt>
+																					<div class="text-muted small text-nowrap mt-2">2:35 am</div>
+																				</div>
+																				<div class="flex-shrink-1 bg-lighter rounded py-2 px-3 mr-3">
+																					<div class="font-weight-semibold mb-1">You</div>
+																					Cum ea graeci tractatos.
+																				</div>
+																			</div>
+
+																			<div class="chat-message-left mb-4">
+																				<div>
+																					<img src="assets/img/avatars/4-small.png" class="ui-w-40 rounded-circle" alt>
+																					<div class="text-muted small text-nowrap mt-2">2:36 am</div>
+																				</div>
+																				<div class="flex-shrink-1 bg-lighter rounded py-2 px-3 ml-3">
+																					<div class="font-weight-semibold mb-1">Kenneth Frazier</div>
+																					Sed pulvinar, massa vitae interdum pulvinar, risus lectus porttitor magna, vitae commodo lectus mauris et velit. Proin ultricies placerat imperdiet. Morbi varius quam ac venenatis tempus.
+																				</div>
+																			</div>
+
+																			<div class="chat-message-left mb-4">
+																				<div>
+																					<img src="assets/img/avatars/4-small.png" class="ui-w-40 rounded-circle" alt>
+																					<div class="text-muted small text-nowrap mt-2">2:37 am</div>
+																				</div>
+																				<div class="flex-shrink-1 bg-lighter rounded py-2 px-3 ml-3">
+																					<div class="font-weight-semibold mb-1">Kenneth Frazier</div>
+																					Cras pulvinar, sapien id vehicula aliquet, diam velit elementum orci.
+																				</div>
+																			</div>
+
+																			<div class="chat-message-right mb-4">
+																				<div>
+																					<img src="assets/img/avatars/1-small.png" class="ui-w-40 rounded-circle" alt>
+																					<div class="text-muted small text-nowrap mt-2">2:38 am</div>
+																				</div>
+																				<div class="flex-shrink-1 bg-lighter rounded py-2 px-3 mr-3">
+																					<div class="font-weight-semibold mb-1">You</div>
+																					Lorem ipsum dolor sit amet, vis erat denique in, dicunt prodesset te vix.
+																				</div>
+																			</div>
+
+																			<div class="chat-message-left mb-4">
+																				<div>
+																					<img src="assets/img/avatars/4-small.png" class="ui-w-40 rounded-circle" alt>
+																					<div class="text-muted small text-nowrap mt-2">2:39 am</div>
+																				</div>
+																				<div class="flex-shrink-1 bg-lighter rounded py-2 px-3 ml-3">
+																					<div class="font-weight-semibold mb-1">Kenneth Frazier</div>
+																					Sit meis deleniti eu, pri vidit meliore docendi ut, an eum erat animal commodo.
+																				</div>
+																			</div>
+
+																			<div class="chat-message-right mb-4">
+																				<div>
+																					<img src="assets/img/avatars/1-small.png" class="ui-w-40 rounded-circle" alt>
+																					<div class="text-muted small text-nowrap mt-2">2:40 am</div>
+																				</div>
+																				<div class="flex-shrink-1 bg-lighter rounded py-2 px-3 mr-3">
+																					<div class="font-weight-semibold mb-1">You</div>
+																					Cum ea graeci tractatos.
+																				</div>
+																			</div>
+
+																			<div class="chat-message-right mb-4">
+																				<div>
+																					<img src="assets/img/avatars/1-small.png" class="ui-w-40 rounded-circle" alt>
+																					<div class="text-muted small text-nowrap mt-2">2:41 am</div>
+																				</div>
+																				<div class="flex-shrink-1 bg-lighter rounded py-2 px-3 mr-3">
+																					<div class="font-weight-semibold mb-1">You</div>
+																					Morbi finibus, lorem id placerat ullamcorper, nunc enim ultrices massa, id dignissim metus urna eget purus.
+																				</div>
+																			</div>
+
+																			<div class="chat-message-left mb-4">
+																				<div>
+																					<img src="assets/img/avatars/4-small.png" class="ui-w-40 rounded-circle" alt>
+																					<div class="text-muted small text-nowrap mt-2">2:42 am</div>
+																				</div>
+																				<div class="flex-shrink-1 bg-lighter rounded py-2 px-3 ml-3">
+																					<div class="font-weight-semibold mb-1">Kenneth Frazier</div>
+																					Sed pulvinar, massa vitae interdum pulvinar, risus lectus porttitor magna, vitae commodo lectus mauris et velit. Proin ultricies placerat imperdiet. Morbi varius quam ac venenatis tempus.
+																				</div>
+																			</div>
+
+																			<div class="chat-message-right mb-4">
+																				<div>
+																					<img src="assets/img/avatars/1-small.png" class="ui-w-40 rounded-circle" alt>
+																					<div class="text-muted small text-nowrap mt-2">2:43 am</div>
+																				</div>
+																				<div class="flex-shrink-1 bg-lighter rounded py-2 px-3 mr-3">
+																					<div class="font-weight-semibold mb-1">You</div>
+																					Lorem ipsum dolor sit amet, vis erat denique in, dicunt prodesset te vix.
+																				</div>
+																			</div>
+
+																			<div class="chat-message-left mb-4">
+																				<div>
+																					<img src="assets/img/avatars/4-small.png" class="ui-w-40 rounded-circle" alt>
+																					<div class="text-muted small text-nowrap mt-2">2:44 am</div>
+																				</div>
+																				<div class="flex-shrink-1 bg-lighter rounded py-2 px-3 ml-3">
+																					<div class="font-weight-semibold mb-1">Kenneth Frazier</div>
+																					Sit meis deleniti eu, pri vidit meliore docendi ut, an eum erat animal commodo.
+																				</div>
+																			</div>
+
+																		</div><!-- / .chat-messages -->
+																	</div>
+
+																	<!-- Chat footer -->
+																	<hr class="border-light m-0">
+																	<div class="flex-grow-0 py-3 px-4">
+																		<form action="">
+																			<div class="input-group mb-3">
+																				<input type="text" class="form-control" placeholder="Напишите сообщение">
+																				<div class="input-group-append">
+																					<button type="button" class="btn btn-primary">Отправить</button>
+																				</div>
+																			</div>
+																			<div class="form-group mb-0">
+																				<label class="form-label w-100">Загрузить файл</label>
+																				<input type="file">
+																				<small class="form-text text-muted">Example block-level help text here.</small>
+																			</div>
+																		</form>
+
+																	</div>
+																	<!-- / Chat footer -->
+
+																</div>
+															</div><!-- / .row -->
+
+														</div><!-- / .card -->
+
+													</div><!-- / .chat-wrapper -->
+
+										</div>
+										<!-- / Чат -->
+
+										<!-- Этапы -->
+										<div class="tab-pane fade" id="project-stage">
+											<div class="card-body">
+												<div class="row">
+													<div class="col"><h6 class="">Этапы работ:</h6></div>
+												</div>
+													<div class="row">
+														<div class=" col-md-12 col-lg-6">
+															<div class="form-group">
+																<label class="switcher">
+																	<input type="checkbox" class="switcher-input">
+																	<span class="switcher-indicator">
+																		<span class="switcher-yes">
+																			<span class="ion ion-md-checkmark"></span>
+																		</span>
+																		<span class="switcher-no">
+																			<span class="ion ion-md-close"></span>
+																		</span>
+																	</span>
+																	<span class="switcher-label">Демонтаж стен</span>
+																</label>
+															</div>
+														</div>
+														<div class="col-md-12 col-lg-6">
+															<a href="javascript:void(0)" class="btn btn-success disabled">Подтвердить завершение этапа</a>
+															<p class="small card-text mb-1">Будет отправлено на согласование с клиентом</p>
+														</div>
+													</div>
+													<hr class="border-light mt-0 mb-3">
+												<div class="row">
+													<div class=" col-md-12 col-lg-6">
+														<div class="form-group">
+															<label class="switcher">
+																<input type="checkbox" class="switcher-input">
+																<span class="switcher-indicator">
+																		<span class="switcher-yes">
+																			<span class="ion ion-md-checkmark"></span>
+																		</span>
+																		<span class="switcher-no">
+																			<span class="ion ion-md-close"></span>
+																		</span>
+																	</span>
+																<span class="switcher-label">Демонтаж стен</span>
+															</label>
+														</div>
+													</div>
+													<div class="col-md-12 col-lg-6">
+														<a href="javascript:void(0)" class="btn btn-success disabled">Подтвердить завершение этапа</a>
+														<p class="small card-text mb-1">Будет отправлено на согласование с клиентом</p>
+													</div>
+												</div>
+												<hr class="border-light mt-0 mb-3">
+												<div class="row">
+													<div class=" col-md-12 col-lg-6">
+														<div class="form-group">
+															<label class="switcher">
+																<input type="checkbox" class="switcher-input">
+																<span class="switcher-indicator">
+																		<span class="switcher-yes">
+																			<span class="ion ion-md-checkmark"></span>
+																		</span>
+																		<span class="switcher-no">
+																			<span class="ion ion-md-close"></span>
+																		</span>
+																	</span>
+																<span class="switcher-label">Демонтаж стен</span>
+															</label>
+														</div>
+													</div>
+													<div class="col-md-12 col-lg-6">
+														<a href="javascript:void(0)" class="btn btn-success disabled">Подтвердить завершение этапа</a>
+														<p class="small card-text mb-1">Будет отправлено на согласование с клиентом</p>
+													</div>
+												</div>
+												<hr class="border-light mt-0 mb-3">
+												<div class="row">
+													<div class=" col-md-12 col-lg-6">
+														<div class="form-group">
+															<label class="switcher">
+																<input type="checkbox" class="switcher-input">
+																<span class="switcher-indicator">
+																		<span class="switcher-yes">
+																			<span class="ion ion-md-checkmark"></span>
+																		</span>
+																		<span class="switcher-no">
+																			<span class="ion ion-md-close"></span>
+																		</span>
+																	</span>
+																<span class="switcher-label">Демонтаж стен</span>
+															</label>
+														</div>
+													</div>
+													<div class="col-md-12 col-lg-6">
+														<a href="javascript:void(0)" class="btn btn-success disabled">Подтвердить завершение этапа</a>
+														<p class="small card-text mb-1">Будет отправлено на согласование с клиентом</p>
+													</div>
+												</div>
+												<hr class="border-light mt-0 mb-3">
+											</div>
+
+											<div class="card-body">
+												<form action="">
+
+													<div class="form-group">
+														<label class="form-label">
+															<h6>
+																Добавить новый этап работ
+															</h6>
+														</label>
+														<input type="email" class="form-control" placeholder="Впишите этап">
+													</div>
+													<button type="submit" class="btn btn-default">Добавить</button>
+												</form>
+											</div>
+										</div>
+										<!-- / Этапы -->
+
+										<!-- Адрес -->
+										<div class="tab-pane fade" id="project-address">
+											<div class="card-header">
+												<h6 class="card-header-title">
+													Адрес:
+												</h6>
+											</div>
+											<div class="card-body">
+												<p>Москва, ул. Ивана Бабушкина, д.24, к.2.
+													+7 (901) 123-45-67
+												</p>
+												<p>
+													Домофон 12*342, этаж 3
+												</p>
+												<hr class="border-light">
+											</div>
+											<div class="card-body">
+												<h6>
+													Добавить адрес:
+												</h6>
+												<form action="">
+													<div class="form-group">
+														<label class="form-label">
+															Адрес
+														</label>
+														<input type="email" class="form-control" placeholder="Москва, д.444, кв.44">
+													</div>
+													<div class="form-group">
+														<label class="form-label">
+															Дополнительная информация
+														</label>
+														<textarea class="form-control" placeholder="Домофон 55, 3 этаж"></textarea>
+													</div>
+													<button type="submit" class="btn btn-default">Добавить</button>
+												</form>
+											</div>
+										</div>
+										<!-- / Адрес -->
+
+										<!-- Оплата -->
+										<div class="tab-pane fade" id="project-pay">
+											<div class="card-body">
+												<div class="">
+													Бюджет всего: </span>
+													<span class="" style="font-size:1.1rem;">1 200 000 ₽</span>
+												</div>
+												<div>
+													<span class="font-weight-light">Оплачено на 24.12.18:</span>
+													<span class="" style="font-size:1.1rem;">540 000 Р.</span>
+												</div>
+												<div>
+													<span class="font-weight-light">Комиссия системы:</span>
+													<span class="" style="font-size:1.1rem;">23 000 Р.</span>
+												</div>
+												<hr class="border-light">
+												<div class="mb-2">
+													<span>1 этап - 100 000 Р. </span> <a href="javascript:void(0)" class="badge badge-default">Ожидает оплаты</a>
+												</div>
+												<div class="mb-0">
+													<span>2 этап - 200 000 Р. </span> <a href="javascript:void(0)" class="badge badge-success">Оплачено</a>
+												</div>
+												<p></p>
+											</div>
+											<div class="card-body">
+												<h6>
+													Добавить оплаты:
+												</h6>
+												<form action="">
+													<div class="form-group">
+														<label class="form-label">
+															Введите сумму
+														</label>
+														<input type="sum" class="form-control" placeholder="150 000">
+													</div>
+													<div class="form-group">
+														<label class="form-label" for="etap">
+															Выберите Этап
+														</label>
+														<select class="form-control" id="etap">
+															<option>1</option>
+															<option>2</option>
+															<option>3</option>
+															<option>4</option>
+															<option>5</option>
+														</select>
+													</div>
+													<label class="form-check">
+														<input class="form-check-input" type="checkbox" value="" disabled="">
+														<div class="form-check-label">
+															Или укажите произвольную сумму дополнительной оплаты.
+														</div>
+													</label>
+													<button type="submit" class="btn btn-success">Отправить на согласование</button>
+												</form>
+											</div>
+										</div>
+										<!-- / Оплата -->
+
+										<!-- Смета и документы -->
+										<div class="tab-pane fade" id="project-docs">
+											<div class="card-body">
+												<div class="table-responsive">
+													<table class="table table-striped">
+	<!--										<thead>
+														<tr>
+															<th scope="col">#</th>
+															<th scope="col">Имя</th>
+															<th scope="col">Фамилия</th>
+															<th scope="col">Username</th>
+														</tr>
+													</thead>-->
+														<tbody>
+														<tr>
+															<th scope="row"><i class="far fa-list-alt" style="font-size: 20px;"></i></th>
+															<td>Смета4543535.xls</td>
+															<td><a href="javascript:void(0)" class="btn btn-success btn-xs">Скачать</a></td>
+															<td><span class="badge badge-success">Одобрен клиентом</span></td>
+														</tr>
+														<tr>
+															<th scope="row"><i class="far fa-list-alt" style="font-size: 20px;"></i></th>
+															<td>Смета4543535.xls</td>
+															<td><a href="javascript:void(0)" class="btn btn-success btn-xs">Скачать</a></td>
+															<td><span class="badge badge-danger">Отказ клиента</span></td>
+														</tr>
+														<tr>
+															<th scope="row"><i class="far fa-list-alt" style="font-size: 20px;"></i></th>
+															<td>Смета4543535.xls</td>
+															<td><a href="javascript:void(0)" class="btn btn-success btn-xs">Скачать</a></td>
+															<td><span class="badge badge-default">На рассмотрении</span></td>
+														</tr>
+														</tbody>
+													</table>
+												</div>
+												<hr class="border-light">
+											</div>
+											<div class="card-body">
+
+												<form action="">
+													<div class="form-group mb-3">
+														<label class="form-label w-100">Выберите файл</label>
+														<input type="file">
+														<!--<small class="form-text text-muted">Example block-level help text here.</small>-->
+													</div>
+													<button type="submit" class="btn btn-success">Загрузить</button>
+												</form>
+											</div>
+										</div>
+										<!-- / Смета и документы -->
+
+										<!-- Гарантия -->
+										<div class="tab-pane fade" id="project-guarantee">
+											<div class="card">
+												<div class="card-datatable table-responsive">
+													<table class="datatables-demo table table-striped table-bordered">
+														<thead>
+														<tr>
+															<th>Тема</th>
+															<th>Создан</th>
+															<th>Измене</th>
+															<th>Завершен</th>
+															<th>Статус</th>
+														</tr>
+														</thead>
+														<tbody>
+														<tr class="">
+															<td><a href="javascript:void(0)" class="project-guarantee__show-block">Здесь текст будет</a></td>
+															<td>12.10.18 23:54</td>
+															<td>12.10.18 23:54</td>
+															<td class="center">12.10.18 23:54</td>
+															<td class="center"><span class="badge badge-info">В работе</span></td>
+														</tr>
+														<tr class="">
+															<td><a href="javascript:void(0)" class="project-guarantee__show-block">Здесь текст будет</a></td>
+															<td>12.10.18 23:54</td>
+															<td>12.10.18 23:54</td>
+															<td class="center">12.10.18 23:54</td>
+															<td class="center"><span class="badge badge-success">Завершено</span></td>
+														</tr>
+														<tr class="">
+															<td><a href="javascript:void(0)" class="project-guarantee__show-block">Здесь текст будет</a></td>
+															<td>12.10.18 23:54</td>
+															<td>12.10.18 23:54</td>
+															<td class="center">12.10.18 23:54</td>
+															<td class="center"><span class="badge badge-danger">Не решено</span></td>
+														</tr>
+														<tr class="">
+															<td><a href="javascript:void(0)" class="project-guarantee__show-block">Здесь текст будет</a></td>
+															<td>12.10.18 23:54</td>
+															<td>12.10.18 23:54</td>
+															<td class="center">12.10.18 23:54</td>
+															<td class="center"><span class="badge badge-default">Новое</span></td>
+														</tr>
+
+														</tbody>
+													</table>
+												</div>
+												<div class="card-body project-guarantee__block hidden-block">
+
+													<h6>Заголовок</h6>
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, illum.</p>
+													<p>Загруженные фото:</p>
+													<div class="project-guarantee__photo d-flex justify-content-start mb-3">
+
+														<img src="assets/img/avatars/6-small.png" alt="" width="100">
+														<img src="assets/img/avatars/6-small.png" alt="" width="100">
+														<img src="assets/img/avatars/6-small.png" alt="" width="100">
+														<img src="assets/img/avatars/6-small.png" alt="" width="100">
+													</div>
+													<a href="javascript:void(0)" class="btn btn-success">Проблема решена</a>
+													<a href="javascript:void(0)" class="btn btn-danger">Отказаться от решения</a>
+												</div>
+											</div>
+										</div>
+										<!-- / Гарантия -->
+
+										<!-- Брак -->
+										<div class="tab-pane fade" id="project-defect">
+											<div class="card">
+												<div class="card-datatable table-responsive">
+													<table class="datatables-demo table table-striped table-bordered">
+														<thead>
+														<tr>
+															<th>Тема</th>
+															<th>Создан</th>
+															<th>Измене</th>
+															<th>Завершен</th>
+															<th>Статус</th>
+														</tr>
+														</thead>
+														<tbody>
+														<tr class="">
+															<td><a href="javascript:void(0)" class="project-guarantee__show-block">Здесь текст будет</a></td>
+															<td>12.10.18 23:54</td>
+															<td>12.10.18 23:54</td>
+															<td class="center">12.10.18 23:54</td>
+															<td class="center"><span class="badge badge-info">В работе</span></td>
+														</tr>
+														<tr class="">
+															<td><a href="javascript:void(0)" class="project-guarantee__show-block">Здесь текст будет</a></td>
+															<td>12.10.18 23:54</td>
+															<td>12.10.18 23:54</td>
+															<td class="center">12.10.18 23:54</td>
+															<td class="center"><span class="badge badge-success">Завершено</span></td>
+														</tr>
+														<tr class="">
+															<td><a href="javascript:void(0)" class="project-guarantee__show-block">Здесь текст будет</a></td>
+															<td>12.10.18 23:54</td>
+															<td>12.10.18 23:54</td>
+															<td class="center">12.10.18 23:54</td>
+															<td class="center"><span class="badge badge-danger">Не решено</span></td>
+														</tr>
+														<tr class="">
+															<td><a href="javascript:void(0)" class="project-guarantee__show-block">Здесь текст будет</a></td>
+															<td>12.10.18 23:54</td>
+															<td>12.10.18 23:54</td>
+															<td class="center">12.10.18 23:54</td>
+															<td class="center"><span class="badge badge-default">Новое</span></td>
+														</tr>
+
+														</tbody>
+													</table>
+												</div>
+												<div class="card-body project-guarantee__block hidden-block">
+
+													<h6>Заголовок</h6>
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, illum.</p>
+													<p>Загруженные фото:</p>
+													<div class="project-guarantee__photo d-flex justify-content-start mb-3">
+
+														<img src="assets/img/avatars/6-small.png" alt="" width="100">
+														<img src="assets/img/avatars/6-small.png" alt="" width="100">
+														<img src="assets/img/avatars/6-small.png" alt="" width="100">
+														<img src="assets/img/avatars/6-small.png" alt="" width="100">
+													</div>
+													<a href="javascript:void(0)" class="btn btn-success">Проблема решена</a>
+													<a href="javascript:void(0)" class="btn btn-danger">Отказаться от решения</a>
+												</div>
+											</div>
+										</div>
+										<!-- / Брак -->
+										<!-- Обращения -->
+										<div class="tab-pane fade" id="project-appeal">
+											<div class="row no-gutters row-bordered">
+												<div class="d-flex col-lg-6">
+
+													<div class="card-body d-flex flex-column">
+														<h6>Обращение</h6>
+														<span>ID: <span class="font-weight-light text-secondary">345345345</span></span>
+														<span>Имя: <span class="font-weight-light text-secondary">Иван</span></span>
+														<span>Фамилия: <span class="text-muted font-italic font-weight-light">скрыто</span></span>
+														<span>Почта: <span class="text-muted font-italic font-weight-light">скрыто</span></span>
+														<span>Дата обращения: <span class="font-weight-light text-secondary">25.12.18, 15:40</span></span>
+														<span>Источник: <span class="font-weight-light text-secondary">Виджет на сайте <i class="icon ion-md-text ml-1"></i></span></span>
+														<span>IP: <span class="font-weight-light text-secondary">Московская область</span></span>
+													</div>
+
+												</div>
+												<div class="d-flex col-lg-6">
+
+													<div class="card-body d-flex flex-column">
+														<h6>Услуга</h6>
+														<a href="javascript:void(0)" class="">Ремонт ванной комнаты эконом</a>
+														<span>M<sup>2</sup>: <span class="font-weight-light text-secondary">12</span></span>
+														<span>Комментарий: <span class="font-weight-light text-secondary">Нет</span></span>
+													</div>
+
+												</div>
+											</div>
+										</div>
+										<!-- / Обращения -->
+
+									</div>
+								</div>
+								<!-- / Табы -->
+							</div>
+							<div class="col-md-4 col-xl-3 orders-card__right-sidebar">
+
+								<!-- Прораб -->
+								<div class="card mb-4">
+									<h6 class="card-header">
+										<span class="card-header-title">Прораб</span>
+									</h6>
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item">
+											<div class="d-flex align-items-center">
+												<img src="assets/img/avatars/1-small.png" class="d-block ui-w-30 rounded-circle" alt="">
+												<div class="px-2">
+													<p href="javascript:void(0)" class="text-dark m-0" >Mike Greene</p>
+													<p class="text-muted m-0">Прораб</p>
+												</div>
+											</div>
+											<a href="javascript:void(0)" class="text-muted">Сменить ответственного</a>
+										</li>
+									</ul>
+								</div>
+								<!-- / Прораб -->
+
+								<!-- Кнопки -->
+								<div class="card mb-4">
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item text-center">
+											<a href="javascript:void(0)" class="btn btn-success btn-round">
+												<i class="fas fa-check"></i>
+												Завершить этап 1</a>
+										</li>
+										<li class="list-group-item text-center">
+
+											<a href="javascript:void(0)" class="btn btn-warning btn-round">
+												<i class="fas fa-pause"></i>
+												Приостановить</a>
+										</li>
+									</ul>
+								</div>
+								<!-- / Кнопки -->
+
+								<!-- Детали -->
+								<div class="card mb-4">
+									<h6 class="card-header">
+										<span class="card-header-title">Детали</span>
+									</h6>
+									<div class="card-body pb-3 pt-3">
+										<div class="mb-3">
+											<h4 class="card-title">ID: 34234234</h4>
+											<p class="font-weight-light card-text text-muted">Ремонт ванной комнаты</p>
+										</div>
+
+										<div class=" card-text text-muted mb-2 d-flex flex-column">
+											<span class="">Клиент:</span>
+											<a class="d-flex align-items-center" href="#">
+											<span class="d-flex flex-lg-row align-items-center align-middle">
+												<img src="assets/img/avatars/1.png" alt="" class="d-block ui-w-20 rounded-circle">
+												<span class="px-1 ml-2 ml-lg-0 card-text text-muted" style="line-height: 1.2">Иван Никифоров</span>
+											</span>
+											</a>
+										</div>
+
+										<div class=" card-text mb-2 text-muted d-flex flex-column">
+											<span>Адрес:</span>
+											<span>Москва, ул. Ивана Бабушкина, д.24, к.2.</span>
+										</div>
+										<div class=" card-text mb-2 text-muted d-flex flex-column">
+											<span>Начало работ:</span>
+											<span>26 мая 2018</span>
+										</div>
+										<div class=" card-text mb-2 text-muted d-flex flex-column">
+											<span>Завершение работ:</span>
+											<span>1 иля 2018</span>
+										</div>
+
+										<div class="">
+											<p class="card-price card-text big-text mb-0">2 150 000</p>
+											<p class="card-text">Оплачено: 2 150 000</p>
+										</div>
+									</div>
+								</div>
+								<!-- / Детали -->
+							</div>
+						</div>
+
+					</div>
+				<!-- / Content -->
+
+			</div>
+			<!-- Layout content -->
+
+		</div>
+		<!-- / Layout container -->
+
+	</div>
+
+	<!-- Overlay -->
+	<div class="layout-overlay layout-sidenav-toggle"></div>
+</div>
+<!-- / Layout wrapper -->
+
+</div>
+<script>
+	$('.header-1 .navbar-search-input > input').on('focus', function() {
+		$('.header-1 .navbar-search-box').addClass('active');
+	});
+	$('.header-1 .navbar-search-cancel').on('click', function(e) {
+		e.preventDefault();
+		$('.header-1 .navbar-search-box').removeClass('active');
+	});
+</script>
+
+<!-- / Content -->
+
+<!-- Core scripts -->
+<script src="assets/vendor/libs/popper/popper.js"></script>
+<script src="assets/vendor/js/bootstrap.js"></script>
+<script src="assets/vendor/js/sidenav.js"></script>
+
+<!-- Libs -->
+<script src="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="assets/vendor/libs/dragula/dragula.js"></script>
+<script src="assets/vendor/libs/datatables/datatables.js"></script>
+
+<!-- Custom -->
+<script src="assets/js/pages_projects_item.js"></script>
+<script src="assets/js/pages_chat.js"></script>
+<script src="assets/js/tables_datatables.js"></script>
+<script src="assets/js/main.js"></script>
+
+
+
+</body>
+
+</html>

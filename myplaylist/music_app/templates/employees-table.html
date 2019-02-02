@@ -1,0 +1,106 @@
+{% extends "imp_base.html" %}
+{% load static %}
+{% block script %}
+<!-- Libs -->
+	<link rel="stylesheet" href="{% static "assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" %}">
+	<link rel="stylesheet" href="{% static "assets/vendor/libs/bootstrap-table/bootstrap-table.css" %}">
+	<!-- Page -->
+        {% endblock %}
+
+
+{% block content %}
+
+			<!-- Layout content -->
+			<div class="container flex-grow-1 container-p-y">
+
+				<h4 class="font-weight-light py-3 mb-4">
+					<span class="text-muted">Tables /</span> Tables
+				</h4>
+
+				<div class="mb-5 text-right">
+					<a href="{% url 'create_employee' %}"><button class="btn-employees-table btn btn-my-color text-white ml-auto">
+						Создать сотрудника
+					</button></a>
+				</div>
+				<table id="employees-table" class="table-appeal" data-detail-view="false" data-minimum-count-columns="2" data-pagination="true" data-id-field="id" data-show-footer="false">
+					<thead>
+					<tr>
+						<th>
+						</th>
+						<th data-sortable="true" data-field="id">ID</th>
+						<th data-sortable="true">Имя</th>
+						<th data-sortable="true">Фамилия</th>
+						<th data-sortable="true">Телефон</th>
+						<th data-sortable="true">Почта</th>
+						<th data-sortable="true">Роль</th>
+						<th data-sortable="true">Активность</th>
+						<th data-sortable="true">Рейтинг</th>
+						<th data-sortable="true">Действие</th>
+					</tr>
+					</thead>
+					<tbody>
+						{% for employee in employee_list %}{% if employee.user == request.user %} {% else %}
+						<tr data-index="0">
+							<td>
+								{% if employee.user.useraccept.avatar %}<a href="{{ employee.user.useraccept.avatar.url }}">
+									<img src="{{ employee.user.useraccept.avatar.url }}" alt class="d-block ui-w-30 rounded-circle">
+								</a> {% else %}{% endif %}
+							</td>
+							<td><a href="{% url 'employee_info' employee.user.id %}" class="my-color">{{ employee.user.id }}</a></td>
+							<td>{{ employee.user.first_name }}</td>
+							<td>{{ employee.user.last_name }}</td>
+							<td>{{ employee.user.useraccept.phone_number }}</td>
+							<td>{{ employee.user.email }}</td>
+							<td>{{ employee.user.useraccept.position }}</td>
+							<td>
+								<div>{{ employee.user.last_login.date }}</div>
+								<div>{{ employee.user.last_login.time }}</div>
+							</td>
+							<td>{% if employee.user.useraccept.rating == 5 %} 
+								<i class="ion ion-md-star text-warning"></i>
+								<i class="ion ion-md-star text-warning"></i>
+								<i class="ion ion-md-star text-warning"></i>
+								<i class="ion ion-md-star text-warning"></i>
+								<i class="ion ion-md-star text-warning"></i>
+								{% elif employee.user.useraccept.rating == 4 %}
+								<i class="ion ion-md-star text-warning"></i>
+								<i class="ion ion-md-star text-warning"></i>
+								<i class="ion ion-md-star text-warning"></i>
+								<i class="ion ion-md-star text-warning"></i>
+								{% elif employee.user.useraccept.rating == 3 %}
+								<i class="ion ion-md-star text-warning"></i>
+								<i class="ion ion-md-star text-warning"></i>
+								<i class="ion ion-md-star text-warning"></i>
+								{% elif employee.user.useraccept.rating == 2 %}
+								<i class="ion ion-md-star text-warning"></i>
+								<i class="ion ion-md-star text-warning"></i>
+								{% else %}
+								<i class="ion ion-md-star text-warning"></i>
+{% endif %}
+
+							</td>
+							<td class="text-center text-nowrap"><a href="{% url 'edit_employee' employee.user.id %}"><button type="button" class="btn btn-default btn-xs icon-btn md-btn-flat user-tooltip" title="" data-original-title="Edit"><i class="ion ion-md-create"></i></button></a>&nbsp;&nbsp;<div class="btn-group"><button type="button" class="btn btn-default btn-xs icon-btn md-btn-flat dropdown-toggle hide-arrow user-tooltip" title="" data-toggle="dropdown" data-original-title="Actions" aria-expanded="false"><i class="ion ion-ios-settings"></i></button><div class="dropdown-menu dropdown-menu-right" x-placement="top-end" style="position: absolute; top: -113px; left: -140px; will-change: top, left;"><a class="dropdown-item" href="{% url 'employee_info' employee.user.id %}">Посмотреть профиль</a></div></div></td>
+						</tr>{% endif %}{% endfor %}
+
+					</tbody>
+				</table>
+
+			</div>
+			<!-- Layout content -->
+
+		</div>
+		<!-- / Layout container -->
+
+	
+
+{% block script2 %}
+
+<script src="{% static "assets/vendor/libs/tableexport/tableexport.js" %}"></script>
+<script src="{% static "assets/vendor/libs/moment/moment.js" %}"></script>
+<link rel="stylesheet" href="{% static "assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.css" %}">
+<script src="{% static "assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.js" %}"></script>
+
+<script src="{% static "assets/vendor/libs/bootstrap-table/bootstrap-table.js" %}"></script>
+<script src="{% static "assets/vendor/libs/bootstrap-table/extensions/export/export.js" %}"></script>
+<script src="{% static "assets/js/tables_bootstrap-table.js" %}"></script>{% endblock %}
+{% endblock %}
