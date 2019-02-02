@@ -32,7 +32,9 @@
         
         </head>
    {% block body %} <body>{% endblock %}
-    	
+    	{% block header %}
+    		{% include "header.html" %}
+    	{% endblock %}
         {% block content %}<main style="background-image: url('{% static "./images/main-bg.jpg" %}'); background-size: cover; width: 100%;">
 </main>{% endblock %}
         {% include "footer.html" %}
