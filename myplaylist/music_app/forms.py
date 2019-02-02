@@ -1,5 +1,4 @@
 from django import forms
-from django_registration.forms import RegistrationForm
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import AuthenticationForm
 # from .models import Comment,Competence,UserAccept,Disputs,MessegesAppeal
@@ -8,27 +7,27 @@ from django.db import models
 
 User = get_user_model()
 
-class RegistrationCustomForm(RegistrationForm):
-    class Meta(RegistrationForm.Meta):
-        fields = [
-            User.USERNAME_FIELD,
-            User.get_email_field_name(),
-            'password1',
-            'password2'
-        ]
-        widgets = {
-            User.USERNAME_FIELD : forms.EmailInput(attrs={'id':"email", 'class':"validate"}),
-        }
-    def __init__(self, *args, **kwargs):
-        super(RegistrationCustomForm, self).__init__(*args, **kwargs)
-        email_field = User.get_email_field_name()
-        self.fields[email_field].required = False
+# class RegistrationCustomForm(RegistrationForm):
+#     class Meta(RegistrationForm.Meta):
+#         fields = [
+#             User.USERNAME_FIELD,
+#             User.get_email_field_name(),
+#             'password1',
+#             'password2'
+#         ]
+#         widgets = {
+#             User.USERNAME_FIELD : forms.EmailInput(attrs={'id':"email", 'class':"validate"}),
+#         }
+#     def __init__(self, *args, **kwargs):
+#         super(RegistrationCustomForm, self).__init__(*args, **kwargs)
+#         email_field = User.get_email_field_name()
+#         self.fields[email_field].required = False
 
-    def save(self,commit=False):
-        user = super(RegistrationCustomForm, self).save(commit=False) 
-        user.email = user.username 
-        user.save() 
-        return user
+#     def save(self,commit=False):
+#         user = super(RegistrationCustomForm, self).save(commit=False) 
+#         user.email = user.username 
+#         user.save() 
+#         return user
 
 
 class LoginForm(AuthenticationForm):
