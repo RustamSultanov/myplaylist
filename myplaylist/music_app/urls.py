@@ -11,7 +11,7 @@ urlpatterns = [
  path('', views.base, name='base'),
  # path('regist', RegistrationView.as_view(form_class=RegistrationCustomForm,template_name='register_form.html'),name='register'),
  # path('accounts/', include('django_registration.backends.activation.urls')),
- path('accounts/login/', auth_view.LoginView.as_view(template_name='authentication_login.html',authentication_form=LoginForm), name='login'),
+ path('accounts/login/', auth_view.LoginView.as_view(template_name='auth_form.html',authentication_form=LoginForm), name='login'),
  # path('imp/login/', auth_view.LoginView.as_view(template_name='authentication_login.html',authentication_form=LoginImpForm), name='login_2'),
  # path('password-reset/',auth_view.PasswordResetView.as_view(template_name='password_reset_form.html'), name='password_reset'),
  # path('password-reset/done/', auth_view.PasswordResetDoneView.as_view(template_name='password_reset_done.html'), name='password_reset_done'),
