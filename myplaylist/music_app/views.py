@@ -78,8 +78,8 @@ from django.contrib.auth import authenticate
 
 # # Create your views here.
 
-# def base(request):
-#     return render(request, 'base.html',)
+def base(request):
+    return render(request, 'base.html',)
 
 # @login_required
 # @user_passes_test(imp_check)
