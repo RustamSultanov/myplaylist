@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myplaylist',
     'music_app',
-    'django_registration'
+    
 ]
 
 AUTH_USER_MODEL = 'music_app.User'
