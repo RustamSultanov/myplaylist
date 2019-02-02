@@ -24,7 +24,7 @@
         <!-- <input id="email" type="email" class="validate"> -->
         {{ form.username }}
         <label for="email">Ваш Email</label>
-        <span class="helper-text" data-error="Неправильные символы"></span>
+        <span class="helper-text" data-error="Неправильный формат почты"></span>
         {% for message in form.errors.values %}
                                     {{ message }}
                                   {% endfor %}
@@ -42,9 +42,9 @@
         </button>
       </div>
     </form>
-    <p class="form__description form__description--small">
+    <!-- <p class="form__description form__description--small">
       <a href="{% url "password_reset" %}">Забыли пароль?</a>
-    </p>
+    </p> -->
     <p class="form__description form__description--small">
       Написать в
       <a href="/">Службу технической поддержки</a>.
