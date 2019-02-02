@@ -3,7 +3,7 @@ from django.conf.urls import include
 from . import views
 from django.contrib.auth import views as auth_view
 import django.urls
-from .forms import LoginForm,RegistrationCustomForm,LoginImpForm
+from .forms import LoginForm
 from django_registration.backends.activation.views import RegistrationView
 
 
