@@ -8,6 +8,8 @@ authors = ["RustamSultanov <rustamelutingol@gmail.com>"]
 python = "^3.6"
 django = "=2.0"
 django-audiofield = "^0.10.0"
+psycopg2 = "^2.7"
+django-debug-toolbar = "^1.11"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
