@@ -38,14 +38,14 @@ class LoginImpForm(AuthenticationForm):
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class':"form-control"}))
         
 
-class CommentEditForm(forms.ModelForm):
+# class CommentEditForm(forms.ModelForm):
 
-    class Meta:
-        model = UserAccept
-        exclude = [
-                'rating'
-                 ]
-        # fields = [
+#     class Meta:
+#         model = UserAccept
+#         exclude = [
+#                 'rating'
+#                  ]
+#         # fields = [
         #         'username', 'first_name','last_name','customer_flag','implementer_flag',
         #         'init_user','implementer','files','rating','employee','another_employee','rating_competence','rating_employee'
         #          ]
@@ -56,111 +56,111 @@ class CommentEditForm(forms.ModelForm):
         #         # 'init_user': forms.Select(attrs={'disabled':"disabled", 'selected':"selected"})
         #         }
 
-class AcceptForm(forms.ModelForm):
+# class AcceptForm(forms.ModelForm):
 
-    class Meta:
-        model = Comment
-        fields = [ 'accept','failure','failure_text']
-        widgets = {
-                'accept': forms.CheckboxInput(attrs={"class":"filled-in",}),
-                'failure': forms.CheckboxInput(attrs={"class":"filled-in",}),
-                'failure_text': forms.Textarea(attrs={'rows' : '2'})
-                }
-
-
-class CompetenceForm(forms.ModelForm):
-
-    class Meta:
-        model = Competence
-        fields = [ 'competence_name']
+#     class Meta:
+#         model = Comment
+#         fields = [ 'accept','failure','failure_text']
+#         widgets = {
+#                 'accept': forms.CheckboxInput(attrs={"class":"filled-in",}),
+#                 'failure': forms.CheckboxInput(attrs={"class":"filled-in",}),
+#                 'failure_text': forms.Textarea(attrs={'rows' : '2'})
+#                 }
 
 
-class DisputForm(forms.ModelForm):
+# class CompetenceForm(forms.ModelForm):
 
-    class Meta:
-        model = Disputs
-        fields = ['text']
-        widgets = {
-                'text': forms.Textarea(attrs={'id' : 'textarea1','class' : 'materialize-textarea',})
-                }
-class MessegesAppealForm(forms.ModelForm):
-
-    class Meta:
-        model = MessegesAppeal
-        fields = ['text']
-        widgets = {
-                'text': forms.Textarea(attrs={'placeholder' : 'Напишите сообщение','class' : 'form-control',})
-                }
+#     class Meta:
+#         model = Competence
+#         fields = [ 'competence_name']
 
 
-class RegistrationEmployeeMainForm(forms.ModelForm):
-    password_check = forms.CharField(widget=forms.PasswordInput(attrs={ 'class' : 'form-control'}))
-    class Meta:
-        model = User
-        fields =  [
-                'username','first_name','last_name','email','password'
-                 ]
+# class DisputForm(forms.ModelForm):
+
+#     class Meta:
+#         model = Disputs
+#         fields = ['text']
+#         widgets = {
+#                 'text': forms.Textarea(attrs={'id' : 'textarea1','class' : 'materialize-textarea',})
+#                 }
+# class MessegesAppealForm(forms.ModelForm):
+
+#     class Meta:
+#         model = MessegesAppeal
+#         fields = ['text']
+#         widgets = {
+#                 'text': forms.Textarea(attrs={'placeholder' : 'Напишите сообщение','class' : 'form-control',})
+#                 }
+
+
+# class RegistrationEmployeeMainForm(forms.ModelForm):
+#     password_check = forms.CharField(widget=forms.PasswordInput(attrs={ 'class' : 'form-control'}))
+#     class Meta:
+#         model = User
+#         fields =  [
+#                 'username','first_name','last_name','email','password'
+#                  ]
                  
-        widgets = {
-                'username': forms.EmailInput(attrs={'class' : 'form-control',}),
-                'first_name': forms.TextInput(attrs={'class' : 'form-control',}),
-                'password' : forms.PasswordInput(attrs={'class' : 'form-control'}),
-                'last_name': forms.TextInput(attrs={'class' : 'form-control',})
-                }
-    def clean(self):
-        username = self.cleaned_data['username']
-        if User.objects.filter(username=username).exists():
-            raise forms.ValidationError('Пользователь с такой почтой уже зарегистрирован')
-        password_check = self.cleaned_data['password_check']
-        password = self.cleaned_data['password']
-        if password_check!=password:
-            raise forms.ValidationError('Пароль не совпадает!')
+#         widgets = {
+#                 'username': forms.EmailInput(attrs={'class' : 'form-control',}),
+#                 'first_name': forms.TextInput(attrs={'class' : 'form-control',}),
+#                 'password' : forms.PasswordInput(attrs={'class' : 'form-control'}),
+#                 'last_name': forms.TextInput(attrs={'class' : 'form-control',})
+#                 }
+#     def clean(self):
+#         username = self.cleaned_data['username']
+#         if User.objects.filter(username=username).exists():
+#             raise forms.ValidationError('Пользователь с такой почтой уже зарегистрирован')
+#         password_check = self.cleaned_data['password_check']
+#         password = self.cleaned_data['password']
+#         if password_check!=password:
+#             raise forms.ValidationError('Пароль не совпадает!')
 
 
-class RegistrationEmployeeAdditionForm(forms.ModelForm):
-    class Meta:
-        model = UserAccept
-        exclude = [
-                'rating','imp','user'
-                 ]
-        widgets = {
-                'phone_number': PhoneNumberInternationalFallbackWidget(attrs={'class' : 'form-control',}),
-                'social_net': forms.URLInput(attrs={'class' : 'form-control',}),
-                'date_birth': forms.DateInput(attrs={'class' : 'form-control',}),
-                'gov': forms.Select(attrs={'class' : 'custom-select',}),
-                'position': forms.TextInput(attrs={'class' : 'form-control',}),
-                'avatar': forms.FileInput(attrs={'class' : 'user-edit-fileinput',}),
+# class RegistrationEmployeeAdditionForm(forms.ModelForm):
+#     class Meta:
+#         model = UserAccept
+#         exclude = [
+#                 'rating','imp','user'
+#                  ]
+#         widgets = {
+#                 'phone_number': PhoneNumberInternationalFallbackWidget(attrs={'class' : 'form-control',}),
+#                 'social_net': forms.URLInput(attrs={'class' : 'form-control',}),
+#                 'date_birth': forms.DateInput(attrs={'class' : 'form-control',}),
+#                 'gov': forms.Select(attrs={'class' : 'custom-select',}),
+#                 'position': forms.TextInput(attrs={'class' : 'form-control',}),
+#                 'avatar': forms.FileInput(attrs={'class' : 'user-edit-fileinput',}),
 
-                }
+#                 }
 
-class EmployeeMainForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields =  [
-                'username','first_name','last_name','email'
-                 ]
+# class EmployeeMainForm(forms.ModelForm):
+#     class Meta:
+#         model = User
+#         fields =  [
+#                 'username','first_name','last_name','email'
+#                  ]
                  
-        widgets = {
-                'username': forms.EmailInput(attrs={'class' : 'form-control',}),
-                'first_name': forms.TextInput(attrs={'class' : 'form-control',}),
-                'last_name': forms.TextInput(attrs={'class' : 'form-control',})
-                }
+#         widgets = {
+#                 'username': forms.EmailInput(attrs={'class' : 'form-control',}),
+#                 'first_name': forms.TextInput(attrs={'class' : 'form-control',}),
+#                 'last_name': forms.TextInput(attrs={'class' : 'form-control',})
+#                 }
 
-class EmployeeAdditionForm(forms.ModelForm):
-    class Meta:
-        model = UserAccept
-        exclude = [
-                'rating','user','imp','company'
-                 ]
-        widgets = {
-                'phone_number': PhoneNumberInternationalFallbackWidget(attrs={'class' : 'form-control',}),
-                'social_net': forms.URLInput(attrs={'class' : 'form-control',}),
-                'date_birth': forms.DateInput(attrs={'class' : 'form-control',}),
-                'gov': forms.Select(attrs={'class' : 'custom-select',}),
-                'position': forms.TextInput(attrs={'class' : 'form-control',}),
-                'avatar': forms.FileInput(attrs={'class' : 'user-edit-fileinput',}),
+# class EmployeeAdditionForm(forms.ModelForm):
+#     class Meta:
+#         model = UserAccept
+#         exclude = [
+#                 'rating','user','imp','company'
+#                  ]
+#         widgets = {
+#                 'phone_number': PhoneNumberInternationalFallbackWidget(attrs={'class' : 'form-control',}),
+#                 'social_net': forms.URLInput(attrs={'class' : 'form-control',}),
+#                 'date_birth': forms.DateInput(attrs={'class' : 'form-control',}),
+#                 'gov': forms.Select(attrs={'class' : 'custom-select',}),
+#                 'position': forms.TextInput(attrs={'class' : 'form-control',}),
+#                 'avatar': forms.FileInput(attrs={'class' : 'user-edit-fileinput',}),
 
-                }
+#                 }
     
     
     # class Meta:
