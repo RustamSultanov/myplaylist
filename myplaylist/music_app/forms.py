@@ -32,6 +32,7 @@ User = get_user_model()
 
 class LoginForm(AuthenticationForm):
     username = forms.CharField(widget=forms.EmailInput(attrs={'id':"email", 'class':"validate"}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'class':"form-control"}))
 
 class LoginImpForm(AuthenticationForm):
     username = forms.CharField(widget=forms.EmailInput(attrs={'class':"form-control"}))
