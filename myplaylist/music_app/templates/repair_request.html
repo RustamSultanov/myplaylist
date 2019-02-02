@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#da532c">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+<div id="app">
+  <div class="mobile-nav">
+  <button class="mobile-nav__burger js-mobile-burger">
+    <svg width="18" height="12">
+      <use href="./images/fill.svg#burger"></use>
+    </svg>
+  </button>
+  <a href="/" class="sidebar__logotype logotype">
+    <span class="logotype__visual">
+      Ремонт<br>
+      <b>сделан</b>
+    </span>
+  </a>
+
+</div>
+
+  <div class="layout layout--user">
+    <aside class="sidebar">
+<a href="/" class="sidebar__logotype logotype">
+  <span class="logotype__visual">
+    Ремонт<br>
+    <b>сделан</b>
+  </span>
+  <p class="logotype__description">
+    Онлайн сервис ремонта с защитой сделок
+  </p>
+</a>
+
+  
+
+
+
+<div class="sidebar-nav nav">
+  <ul class="nav__list list-unstyled">
+    
+      <li class="nav__item">
+        <a href="/" class="nav__link">
+          Каталог ремонтов
+        </a>
+      </li>
+    
+      <li class="nav__item">
+        <a href="/" class="nav__link">
+          Онлайн конструктор
+        </a>
+      </li>
+    
+      <li class="nav__item">
+        <a href="/" class="nav__link">
+          Исполнители
+        </a>
+      </li>
+    
+      <li class="nav__item">
+        <a href="/" class="nav__link">
+          О проекте
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <ul class="profile__control profile__control--no-user list-unstyled">
+    <li class="profile__control-item">
+      <a href="/settings" class="profile__control-link">Регистрация</a>
+    </li>
+    <li class="profile__control-item">
+      <a href="/logout" class="profile__control-link">Войти</a>
+    </li>
+  </ul>
+</aside>
+
+    
+  <main class="auth-page">
+    <div class="dialog">
+  <a href="/" class="mobile-navigate">
+    <svg width="16" height="16">
+      <use href="./images/fill.svg#arrow-left"></use>
+    </svg>
+    <span class="mobile-navigate__text">Восстановление пароля</span>
+  </a>
+  <div class="dialog__inner">
+    <header>
+      <h2 class="form__title">Восстановление пароля</h2>
+    </header>
+    <p class="form__description">
+      Для восстановления пароля вам необходимо ввести адрес вашей
+      электронной почты,
+      который вы указывали при
+      регистрации на сайте.
+    </p>
+    <form class="repair-form">
+      <div class="input-field">
+        <input id="email" type="email" class="validate">
+        <label for="email">Ваш Email</label>
+        <span class="helper-text" data-error="Неправильные символы"></span>
+      </div>
+      <div class="form__button-wrapper">
+        <button class="btn waves-effect waves-light btn--primary" type="submit" name="action">
+          Восстановить
+        </button>
+      </div>
+    </form>
+    <p class="form__description form__description--small">
+      Написать в
+      <a href="/">Службу технической поддержки</a>.
+    </p>
+  </div>
+</div>
+
+  </main>
+
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="./js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#da532c">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+<div id="app" class="container">
+
+
+
+<div class="row">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s6">
+        <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+        <label for="first_name">First Name</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="last_name" type="text" class="validate">
+        <label for="last_name">Last Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input disabled="disabled" value="I am not editable" id="disabled" type="text" class="validate">
+        <label for="disabled">Disabled</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="password" type="password" class="validate">
+        <label for="password">Password</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="email" type="email" class="validate">
+        <label for="email">Email</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        This is an inline input field:
+        <div class="input-field inline">
+          <input id="email_inline" type="email" class="validate">
+          <label for="email_inline">Email</label>
+          <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+<form action="#">
+  <div class="file-field input-field">
+    <div class="btn">
+      <span>File</span>
+      <input type="file">
+    </div>
+    <div class="file-path-wrapper">
+      <input class="file-path validate" type="text">
+    </div>
+  </div>
+</form>
+
+
+
+
+
+
+<div class="input-field col s12">
+  <select>
+    <option value="" disabled="disabled" selected="selected">Choose your option</option>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+  </select>
+  <label>Materialize Select</label>
+</div>
+
+<div class="input-field col s12">
+  <select multiple="multiple">
+    <option value="" disabled="disabled" selected="selected">Choose your option</option>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+  </select>
+  <label>Materialize Multiple Select</label>
+</div>
+
+<div class="input-field col s12">
+  <select>
+    <optgroup label="team 1">
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+    </optgroup>
+    <optgroup label="team 2">
+      <option value="3">Option 3</option>
+      <option value="4">Option 4</option>
+    </optgroup>
+  </select>
+  <label>Optgroups</label>
+</div>
+
+<div class="input-field col s12 m6">
+  <select class="icons">
+    <option value="" disabled="disabled" selected="selected">Choose your option</option>
+    <option value="" data-icon="images/sample-1.jpg">example 1</option>
+    <option value="" data-icon="images/office.jpg">example 2</option>
+    <option value="" data-icon="images/yuna.jpg">example 3</option>
+  </select>
+  <label>Images in select</label>
+</div>
+<div class="input-field col s12 m6">
+  <select class="icons">
+    <option value="" disabled="disabled" selected="selected">Choose your option</option>
+    <option value="" data-icon="images/sample-1.jpg" class="left">example 1</option>
+    <option value="" data-icon="images/office.jpg" class="left">example 2</option>
+    <option value="" data-icon="images/yuna.jpg" class="left">example 3</option>
+  </select>
+  <label>Images in select</label>
+</div>
+
+<label>Browser Select</label>
+<select class="browser-default">
+  <option value="" disabled="disabled" selected="selected">Choose your option</option>
+  <option value="1">Option 1</option>
+  <option value="2">Option 2</option>
+  <option value="3">Option 3</option>
+</select>
+
+
+
+
+
+<form action="#">
+  <p>
+    <label>
+      <input name="group1" type="radio" checked="checked">
+      <span>Red</span>
+    </label>
+  </p>
+  <p>
+    <label>
+      <input name="group1" type="radio">
+      <span>Yellow</span>
+    </label>
+  </p>
+  <p>
+    <label>
+      <input class="with-gap" name="group1" type="radio">
+      <span>Green</span>
+    </label>
+  </p>
+  <p>
+    <label>
+      <input name="group1" type="radio" disabled="disabled">
+      <span>Brown</span>
+    </label>
+  </p>
+</form>
+
+
+
+
+
+  <a class="dropdown-trigger btn" href="#" data-target="dropdown1">Drop Me!</a>
+
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider" tabindex="-1"></li>
+    <li><a href="#!">three</a></li>
+    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+  </ul>
+
+
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script>document.addEventListener("DOMContentLoaded",function(){var e=document.querySelectorAll(".dropdown-trigger"),n=document.querySelectorAll("select");window.M.FormSelect.init(n),window.M.Dropdown.init(e)})</script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+.btn-my-color{
+	background: #00cc66;
+}
+.my-color{
+	color: #00cc66;
+}
+.my-color:hover{
+	color: #007D3E;
+}
+.navbar-my-menu{
+	font-weight: 500;
+}
+
+.nav-item{
+	position: relative;
+}
+body.padding-top-navbar{
+	padding-top: 100px!important;
+}
+.table-appeal{
+	font-size: 0.8rem;
+}
+.ion-md-cart{
+	font-size: 20px;
+}
+
+/*
+== Page - Sales Offer ==
+*/
+
+.sales-offer__card{
+	max-width: 18rem;
+	position: relative;
+	transition: box-shadow 0.3s;
+}
+.sales-offer__card:hover{
+	-webkit-box-shadow: 2px 3px 5px rgba(0,0,0,0.3);
+	box-shadow: 2px 3px 5px rgba(0,0,0,0.3);
+}
+.sales-offer__card-img{
+	width: 100%;
+	height: 170px;
+	box-sizing: border-box;
+	overflow: hidden;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center;
+}
+.sales-offer__card-stars{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+.sales-offer__card-stars .ion-md-star{
+	font-size: 20px;
+}
+.sales-offer__card-icon-home{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	border-radius: 50%;
+	background-color: #fff;
+}
+.sales-offer__card-icon-home .ion-md-snow{
+	font-size: 20px;
+	color: cornflowerblue;
+	position: absolute;
+	top: -1px;
+	left: 50%;
+	margin-left: -10px;
+}
+.sales-offer__card .card-title{
+	margin-bottom: 0;
+}
+.sales-offer__card .card-text{
+	margin-bottom: 0;
+	font-size: 0.8rem;
+	font-weight: lighter;
+}
+.sales-offer__card .wrap-icon{
+	width: 15px;
+	text-align: center;
+}
+.sales-offer__card .wrap-icon [class^="ion-"]::before, .sales-offer__card .wrap-icon [class*=" ion-"]::before{
+	line-height: 18px;
+}
+.sales-offer__card .sales-offer__card-price{
+	font-weight: 500;
+}
+.sales-offer .sales-offer__card-stats p{
+	font-size: 0.7rem;
+}
+
+/*
+== Page - Orders List ==
+*/
+.orders-list__card{
+	max-width: 18rem;
+	position: relative;
+	transition: box-shadow 0.3s;
+}
+.orders-list__card:hover{
+	-webkit-box-shadow: 2px 3px 5px rgba(0,0,0,0.3);
+	box-shadow: 2px 3px 5px rgba(0,0,0,0.3);
+}
+.orders-list__card-img{
+	width: 100%;
+	height: 170px;
+	box-sizing: border-box;
+	overflow: hidden;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center;
+}
+.orders-list__card-icon-home{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+.orders-list__card .card-title{
+	margin-bottom: 0;
+	font-size: 1.1rem;
+}
+.orders-list__card .card-text{
+	margin-bottom: 0;
+	font-size: 0.8rem;
+	font-weight: lighter;
+}
+.orders-list .orders-list__card-price{
+	font-weight: 500;
+	font-size: 1.1rem;
+}
+.orders-list__card .badge{
+	text-transform: uppercase;
+	font-size: 0.7rem;
+}
+.orders-list__card-stars{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+.orders-list__card-stars .ion-md-star{
+	font-size: 20px;
+}
+/*
+== Page - Orders Card ==
+*/
+.orders-card__right-sidebar h4{
+	margin-bottom: 0;
+}
+.orders-card__right-sidebar p{
+	margin-bottom: 0;
+}
+.orders-card__right-sidebar .card-price{
+	font-weight: 500;
+	font-size: 0.9rem;
+}
+.hidden-block{
+	display: none;
+}
+
+.project-guarantee__photo img{
+	width: 100px;
+	height: auto;
+	margin-right: 10px;
+}
+
+
+
+.main_input_file {
+	display: none;
+}
+#f_name {
+	background: transparent;
+	border: 0;
+	display: inline-block;
+	vertical-align: top;
+	height: 30px;
+	padding: 0 8px;
+	width: 150px;
+}

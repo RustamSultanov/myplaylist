@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  
+<main class="auth-page">
+    <div class="dialog">
+<a href="/" class="mobile-navigate">
+    <svg width="16" height="16">
+      <use href="{% static "./images/fill.svg#arrow-left" %}"></use>
+    </svg>
+    <span class="mobile-navigate__text">Авторизация</span>
+  </a>
+  <div class="dialog__inner">
+    <header>
+      <h2 class="form__title">Войти</h2>
+      <p class="form__description">
+        Для авторизации в сервисе РемонтСделан.РФ
+        необходимо ввести номер вашего телефона и пароль.
+      </p>
+    </header>
+    <form class="login-form" method="post">
+      {% csrf_token %}
+      <div class="input-field">
+        <!-- <input id="email" type="email" class="validate"> -->
+        {{ form.username }}
+        <label for="email">Ваш Email</label>
+        <span class="helper-text" data-error="Неправильные символы"></span>
+        {% for message in form.errors.values %}
+                                    {{ message }}
+                                  {% endfor %}
+                            
+      </div>
+      <div class="input-field">
+        <!--  <input id="tel" type="tel" class="validate"> -->
+        {{ form.password }}
+        <label for="tel">Пароль</label>
+      </div>
+      <div class="form__button-wrapper">
+         
+        <button class="btn waves-effect waves-light btn--primary" type="submit" name="action">
+          Войти
+        </button>
+      </div>
+    </form>
+    <p class="form__description form__description--small">
+      <a href="{% url "password_reset" %}">Забыли пароль?</a>
+    </p>
+    <p class="form__description form__description--small">
+      Написать в
+      <a href="/">Службу технической поддержки</a>.
+    </p>
+  </div>
+</div>
+
+  </main>
+  {% endblock %}
