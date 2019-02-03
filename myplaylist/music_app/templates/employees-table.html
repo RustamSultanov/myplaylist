@@ -46,7 +46,7 @@
 									<img src="{{ employee.user.useraccept.avatar.url }}" alt class="d-block ui-w-30 rounded-circle">
 								</a> {% else %}{% endif %}
 							</td>
-							<td><a href="{% url 'employee_info' employee.user.id %}" class="my-color">{{ employee.user.id }}</a></td>
+							<td></td>
 							<td>{{ employee.user.first_name }}</td>
 							<td>{{ employee.user.last_name }}</td>
 							<td>{{ employee.user.useraccept.phone_number }}</td>
@@ -79,7 +79,7 @@
 {% endif %}
 
 							</td>
-							<td class="text-center text-nowrap"><a href="{% url 'edit_employee' employee.user.id %}"><button type="button" class="btn btn-default btn-xs icon-btn md-btn-flat user-tooltip" title="" data-original-title="Edit"><i class="ion ion-md-create"></i></button></a>&nbsp;&nbsp;<div class="btn-group"><button type="button" class="btn btn-default btn-xs icon-btn md-btn-flat dropdown-toggle hide-arrow user-tooltip" title="" data-toggle="dropdown" data-original-title="Actions" aria-expanded="false"><i class="ion ion-ios-settings"></i></button><div class="dropdown-menu dropdown-menu-right" x-placement="top-end" style="position: absolute; top: -113px; left: -140px; will-change: top, left;"><a class="dropdown-item" href="{% url 'employee_info' employee.user.id %}">Посмотреть профиль</a></div></div></td>
+							<td class="text-center text-nowrap"><a href="{% url 'edit_employee' employee.user.id %}"><button type="button" class="btn btn-default btn-xs icon-btn md-btn-flat user-tooltip" title="" data-original-title="Edit"><i class="ion ion-md-create"></i></button></a>&nbsp;&nbsp;<div class="btn-group"><button type="button" class="btn btn-default btn-xs icon-btn md-btn-flat dropdown-toggle hide-arrow user-tooltip" title="" data-toggle="dropdown" data-original-title="Actions" aria-expanded="false"><i class="ion ion-ios-settings"></i></button><div class="dropdown-menu dropdown-menu-right" x-placement="top-end" style="position: absolute; top: -113px; left: -140px; will-change: top, left;"><a class="dropdown-item" href="">Посмотреть профиль</a></div></div></td>
 						</tr>{% endif %}{% endfor %}
 
 					</tbody>
