@@ -8,7 +8,7 @@ from .forms import LoginForm
 
 
 urlpatterns = [
- path('', views.base, name='base'),
+ path('', views.employee_list, name='base'),
  # path('regist', RegistrationView.as_view(form_class=RegistrationCustomForm,template_name='register_form.html'),name='register'),
  # path('accounts/', include('django_registration.backends.activation.urls')),
  path('accounts/login/', auth_view.LoginView.as_view(template_name='authentication_login.html',authentication_form=LoginForm), name='login'),
