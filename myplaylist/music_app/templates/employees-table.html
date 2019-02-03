@@ -75,18 +75,16 @@
 
 							</td>
 							<td class="text-center text-nowrap"><a href=""><button type="button" class="btn btn-default btn-xs icon-btn md-btn-flat user-tooltip" title="" data-original-title="Edit"><i class="ion ion-md-create"></i></button></a>&nbsp;&nbsp;
-								<a id="custom-delete" href="{% url 'delete_track' employee.id %}"><button type="button" class="btn btn-default btn-xs icon-btn md-btn-flat dropdown-toggle hide-arrow user-tooltip" title="" data-original-title="Actions" ><i class="fa fa-times"></i></button></a></td>
+								<a name='delete' href="{% url 'delete_track' employee.id %}"><button type="button" class="btn btn-default btn-xs icon-btn md-btn-flat dropdown-toggle hide-arrow user-tooltip" title="" data-original-title="Actions" ><i class="fa fa-times"></i></button></a></td>
 						</tr>{% endfor %}
 
 					</tbody>
 				</table><script>
 $( document ).ready(function() {
-    $( "#custom-delete" ).click(function() {
-       if ((confirm("Вы действительно хотите удалить трек?")) == false) {
-          event.preventDefault();
-       };
-    });
+$('[name = 'delete']').click(function() {
+alert('hey');
 });
+}); 
 </script>
 
 			</div>
