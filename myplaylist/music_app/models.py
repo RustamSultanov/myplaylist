@@ -3,7 +3,7 @@ from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 
 from django.contrib.auth.models import BaseUserManager
-
+from audiofield.models import AudioFile
 
 class UserManager(BaseUserManager):
     """
@@ -46,12 +46,11 @@ class User(AbstractUser):
         return self.email
 
 
-
-
-
-
-
-
+class Track(AudioFile):
+	artist = models.CharField(max_length=200, null=True, blank=True)
+	image = models.ImageField(upload_to='upload/audiofiles_img', null=True, blank=True)
+	user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name=_('user'), help_text=_('select user'))
+	
 # # Create your models here.
 # # def get_custom_username(self):
 # # 	return f"Компания: {self.username}, сотрудник: {self.first_name} {self.last_name}"
