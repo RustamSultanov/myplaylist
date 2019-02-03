@@ -49,6 +49,14 @@ class User(AbstractUser):
 class Track(AudioFile):
 	artist = models.CharField(max_length=200, null=True, blank=True)
 	image = models.ImageField(upload_to='upload/audiofiles_img', null=True, blank=True)
+	RATING_CHOICE = (
+        (1, "Ужасно"),
+        (2, "Плохо"),
+        (3, "Нормально"),
+        (4, "Хорошо"),
+        (5, "Отлично"),
+    )
+	rating = models.IntegerField(choices=RATING_CHOICE, default=5)
 	
 # # Create your models here.
 # # def get_custom_username(self):
@@ -68,14 +76,14 @@ class Track(AudioFile):
 # 	date_birth = models.DateField(blank=True,null=True)
 # 	gov = models.IntegerField(choices=GOV_CHOICE, default=0)
 # 	social_net = models.URLField(max_length=200,blank=True)
-# 	RATING_CHOICE = (
-#         (1, "Ужасно"),
-#         (2, "Плохо"),
-#         (3, "Нормально"),
-#         (4, "Хорошо"),
-#         (5, "Отлично"),
-#     )
-# 	rating = models.IntegerField(choices=RATING_CHOICE, default=5)
+	# RATING_CHOICE = (
+ #        (1, "Ужасно"),
+ #        (2, "Плохо"),
+ #        (3, "Нормально"),
+ #        (4, "Хорошо"),
+ #        (5, "Отлично"),
+ #    )
+	# rating = models.IntegerField(choices=RATING_CHOICE, default=5)
 # 	def __str__(self):
 # 		return f"{self.user}"
 

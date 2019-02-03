@@ -83,11 +83,16 @@ def base(request):
 
 @login_required
 def create_employee_view(request):
-    form_user = RegistrationEmployeeMainForm(request.POST or None, request.FILES or None)
+    form_user = UploadTrackForm(request.POST or None, request.FILES or None)
     if form_user.is_valid():
-        new_user = form_user.save()
-        
-        new_user.save()
+        new_track = form_user.save(commit=False)
+        new_track.name = form_user.cleaned_data['name']
+        new_track.artist = form_user.cleaned_data['artist']
+        new_track.rating = form_user.cleaned_data['rating']
+        new_track.image = form_user.cleaned_data['image']
+        new_track.audio_file = form_user.cleaned_data['audio_file']
+        new_track.user = request.user
+        new_track.save()
         return HttpResponseRedirect(reverse('base'))
     context = {
         'form_user': form_user
