@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import AuthenticationForm
 from .models import User, Track
 from django.db import models
-
+from audiofield.widgets import CustomerAudioFileWidget
 
 User = get_user_model()
 
