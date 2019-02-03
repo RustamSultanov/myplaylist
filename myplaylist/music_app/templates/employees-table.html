@@ -27,9 +27,9 @@
 					<tr>
 						<th>
 						</th>
-						<th data-sortable="true" data-field="id">ID</th>
-						<th data-sortable="true">Имя</th>
-						<th data-sortable="true">Фамилия</th>
+						<th data-sortable="true" data-field="id">Название трека</th>
+						<th data-sortable="true">Автор</th>
+						<th data-sortable="true"></th>
 						<th data-sortable="true">Телефон</th>
 						<th data-sortable="true">Почта</th>
 						<th data-sortable="true">Роль</th>
@@ -39,48 +39,7 @@
 					</tr>
 					</thead>
 					<tbody>
-						{% for employee in employee_list %}{% if employee.user == request.user %} {% else %}
-						<tr data-index="0">
-							<td>
-								{% if employee.user.useraccept.avatar %}<a href="{{ employee.user.useraccept.avatar.url }}">
-									<img src="{{ employee.user.useraccept.avatar.url }}" alt class="d-block ui-w-30 rounded-circle">
-								</a> {% else %}{% endif %}
-							</td>
-							<td></td>
-							<td>{{ employee.user.first_name }}</td>
-							<td>{{ employee.user.last_name }}</td>
-							<td>{{ employee.user.useraccept.phone_number }}</td>
-							<td>{{ employee.user.email }}</td>
-							<td>{{ employee.user.useraccept.position }}</td>
-							<td>
-								<div>{{ employee.user.last_login.date }}</div>
-								<div>{{ employee.user.last_login.time }}</div>
-							</td>
-							<td>{% if employee.user.useraccept.rating == 5 %} 
-								<i class="ion ion-md-star text-warning"></i>
-								<i class="ion ion-md-star text-warning"></i>
-								<i class="ion ion-md-star text-warning"></i>
-								<i class="ion ion-md-star text-warning"></i>
-								<i class="ion ion-md-star text-warning"></i>
-								{% elif employee.user.useraccept.rating == 4 %}
-								<i class="ion ion-md-star text-warning"></i>
-								<i class="ion ion-md-star text-warning"></i>
-								<i class="ion ion-md-star text-warning"></i>
-								<i class="ion ion-md-star text-warning"></i>
-								{% elif employee.user.useraccept.rating == 3 %}
-								<i class="ion ion-md-star text-warning"></i>
-								<i class="ion ion-md-star text-warning"></i>
-								<i class="ion ion-md-star text-warning"></i>
-								{% elif employee.user.useraccept.rating == 2 %}
-								<i class="ion ion-md-star text-warning"></i>
-								<i class="ion ion-md-star text-warning"></i>
-								{% else %}
-								<i class="ion ion-md-star text-warning"></i>
-{% endif %}
-
-							</td>
-							<td class="text-center text-nowrap"><a href="{% url 'edit_employee' employee.user.id %}"><button type="button" class="btn btn-default btn-xs icon-btn md-btn-flat user-tooltip" title="" data-original-title="Edit"><i class="ion ion-md-create"></i></button></a>&nbsp;&nbsp;<div class="btn-group"><button type="button" class="btn btn-default btn-xs icon-btn md-btn-flat dropdown-toggle hide-arrow user-tooltip" title="" data-toggle="dropdown" data-original-title="Actions" aria-expanded="false"><i class="ion ion-ios-settings"></i></button><div class="dropdown-menu dropdown-menu-right" x-placement="top-end" style="position: absolute; top: -113px; left: -140px; will-change: top, left;"><a class="dropdown-item" href="">Посмотреть профиль</a></div></div></td>
-						</tr>{% endif %}{% endfor %}
+						
 
 					</tbody>
 				</table>
