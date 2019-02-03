@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import AuthenticationForm
-# from .models import Comment,Competence,UserAccept,Disputs,MessegesAppeal
+from .models import User
 from django.db import models
 
 
@@ -134,18 +134,19 @@ class LoginImpForm(AuthenticationForm):
 
 #                 }
 
-# class EmployeeMainForm(forms.ModelForm):
-#     class Meta:
-#         model = User
-#         fields =  [
-#                 'username','first_name','last_name','email'
-#                  ]
+class EmployeeMainForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields =  [
+                'first_name','last_name','email','profile_picture'
+                 ]
                  
-#         widgets = {
-#                 'username': forms.EmailInput(attrs={'class' : 'form-control',}),
-#                 'first_name': forms.TextInput(attrs={'class' : 'form-control',}),
-#                 'last_name': forms.TextInput(attrs={'class' : 'form-control',})
-#                 }
+        widgets = {
+                'email': forms.EmailInput(attrs={'class' : 'form-control',}),
+                'first_name': forms.TextInput(attrs={'class' : 'form-control',}),
+                'last_name': forms.TextInput(attrs={'class' : 'form-control',})
+                'profile_picture': forms.FileInput()
+                }
 
 # class EmployeeAdditionForm(forms.ModelForm):
 #     class Meta:

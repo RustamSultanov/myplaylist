@@ -142,30 +142,13 @@ def create_employee_view(request):
 def edit_employee_view(request,user_id):
     user = User.objects.get(id=user_id)
     useraccept = UserAccept.objects.get(id=user.useraccept.id)
-    form_user = EmployeeMainForm(request.POST or None, request.FILES or None, initial=model_to_dict(user), instance=user,prefix='user')
-    form_useraccept = EmployeeAdditionForm(request.POST or None, request.FILES or None, initial=model_to_dict(useraccept), instance=useraccept,prefix='useraccept')
-    if form_user.is_valid() and form_useraccept.is_valid():
-        new_user = form_user.save(commit=False)
-        username = form_user.cleaned_data['username']
-        first_name = form_user.cleaned_data['first_name']
-        last_name = form_user.cleaned_data['last_name']
-        email=form_user.cleaned_data['username']
-        new_user.email = email
-        new_user.username = username
-        new_user.first_name = first_name
-        new_user.last_name = last_name
+    form_user = EmployeeMainForm(request.POST or None, request.FILES or None, initial=model_to_dict(user), instance=user)
+    if form_user.is_valid():
+        new_user = form_user.save()
         new_user.save()
-        user_company = form_useraccept.save(commit=False)
-        user_company.gov = form_useraccept.cleaned_data['gov']
-        user_company.phone_number = form_useraccept.cleaned_data['phone_number']
-        user_company.date_birth = form_useraccept.cleaned_data['date_birth']
-        user_company.social_net = form_useraccept.cleaned_data['social_net']
-        user_company.position = form_useraccept.cleaned_data['position']
-        user_company.avatar = form_useraccept.cleaned_data['avatar']
-        user_company.save()
         return HttpResponseRedirect(reverse('employee_list'))
     context = {
-        'form_user': form_user,'form_useraccept': form_useraccept,'user': user,'useraccept': useraccept
+        'form_user': form_user,'form_useraccept': form_useraccept,'user': user
     }
     return render(request, 'edit-employee.html', context)
 

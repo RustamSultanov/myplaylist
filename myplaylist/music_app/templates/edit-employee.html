@@ -22,7 +22,7 @@
 				<div class="container flex-grow-1 container-p-y">
 {% block create %}
 					<h4 class="font-weight-bold py-3 mb-4">
-						Редактирование сотрудника <span class="text-muted">{{ user.get_full_name }}</span>
+						Редактирование профиля <span class="text-muted">{{ user.get_full_name }}</span>
 					</h4>
 
 					<div class="nav-tabs-top">
@@ -30,9 +30,7 @@
 							<li class="nav-item">
 								<a class="nav-link active" data-toggle="tab" href="#user-edit-account">Аккунт</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link" data-toggle="tab" href="#user-edit-info">Информация</a>
-							</li>
+							
 						</ul>
 						<div class="tab-content">
 
@@ -42,12 +40,12 @@
 								<div class="card-body">
 
 									<div class="media align-items-center">
-					{% if useraccept.avatar %}	<img src="{{ useraccept.avatar.url }}" alt="" class="d-block ui-w-80">{% else %}{% endif %}
+					{% if user.profile_picture %}	<img src="{{ user.profile_picture.url }}" alt="" class="d-block ui-w-80">{% else %}{% endif %}
 										<div class="media-body ml-3">
 											<label class="form-label d-block mb-2">Аватар</label>
 											<label class="btn btn-outline-success btn-sm">
 												Загрузить фото
-												{{ form_useraccept.avatar }}
+												{{ form_user.profile_picture }}
 											</label>&nbsp;
 											<button type="button" class="btn btn-default btn-sm md-btn-flat">Сбросить</button>
 										</div>
@@ -57,7 +55,7 @@
 								<hr class="border-light m-0">
 								<div class="card-body pb-2">
 {{ form_user.errors }}
-                                  {{ form_useraccept.errors }}
+                                  
                                  
 								<!-- 	<div class="form-group">
 										<label class="form-label">Логин</label>
@@ -74,59 +72,11 @@
 									</div>
 									<div class="form-group">
 										<label class="form-label">E-mail</label>
-										{{ form_user.username }}
+										{{ form_user.email }}
 										
 									</div>
 									{% endblock %}
-									<div class="form-group">
-										<label class="form-label">Роль</label>
-										{{ form_useraccept.position }}
-										<!-- <select class="custom-select">
-											<option selected>Прораб</option>
-											<option>Author</option>
-											<option>Staff</option>
-											<option>Admin</option>
-										</select> -->
-									</div>
-								</div>
-<!--								<div class="card-body pb-2">
-									<div class="form-group">
-										<label class="custom-control custom-checkbox m-0">
-											<input type="checkbox" class="custom-control-input" checked>
-											<span class="custom-control-label">Verified</span>
-										</label>
-									</div>
-								</div>-->
-							</div>
-
-							<!--Табы два-->
-							<div class="tab-pane fade" id="user-edit-info">
-								<div class="card-body pb-2">
-									<h6 class="mb-4">Социальные сети</h6>
-									<div class="form-group">
-										<label class="form-label">Инстаграмм</label>
-										{{ form_useraccept.social_net }}
-									</div>
-								</div>
-								<hr class="border-light m-0">
-								<div class="card-body pb-2">
-									<h6 class="mb-4">Личные данные</h6>
-									<div class="form-group">
-										<label class="form-label">День рождения</label>
-										{{ form_useraccept.date_birth }}
-									</div>
-									<div class="form-group">
-										<label class="form-label">Гражданство</label>
-										{{ form_useraccept.gov }}
-									</div>
-								</div>
-								<hr class="border-light m-0">
-								<div class="card-body pb-2">
-									<h6 class="mb-4">Контакты</h6>
-									<div class="form-group">
-										<label class="form-label">Телефон</label>
-										{{ form_useraccept.phone_number }}
-									</div>
+									
 								</div>
 							</div>
 						</div>
