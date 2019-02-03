@@ -147,7 +147,7 @@ def edit_employee_view(request,user_id):
         new_user.save()
         return HttpResponseRedirect(reverse('employee_list'))
     context = {
-        'form_user': form_user,'form_useraccept': form_useraccept,'user': user
+        'form_user': form_user,'user': user
     }
     return render(request, 'edit-employee.html', context)
 
