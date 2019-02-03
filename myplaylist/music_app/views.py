@@ -170,8 +170,7 @@ def edit_employee_view(request,user_id):
 
 @login_required
 def employee_list(request):
-    user=request.user
-    employee_list = User.objects.all()
+    employee_list = Track.objects.filter(user=request.user.id)
     return render(request, 'employees-table.html',{'employee_list':employee_list})
 
 
