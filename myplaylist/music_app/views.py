@@ -141,7 +141,6 @@ def create_employee_view(request):
 @login_required
 def edit_employee_view(request,user_id):
     user = User.objects.get(id=user_id)
-    useraccept = UserAccept.objects.get(id=user.useraccept.id)
     form_user = EmployeeMainForm(request.POST or None, request.FILES or None, initial=model_to_dict(user), instance=user)
     if form_user.is_valid():
         new_user = form_user.save()
