@@ -172,7 +172,7 @@ def edit_employee_view(request,user_id):
 @login_required
 def employee_list(request):
     user=request.user
-    employee_list = UserAccept.objects.select_related('user').filter(company=user.useraccept.company)
+    employee_list = User.objects.all()
     return render(request, 'employees-table.html',{'employee_list':employee_list})
 
 
