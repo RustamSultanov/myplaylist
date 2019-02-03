@@ -14,7 +14,9 @@
 								
 								<hr class="border-light m-0">
 								<div class="card-body pb-2">
-{{ form_user.errors }}
+{% for message in form_user.errors.values %}
+                                    {{ message }}
+                                  {% endfor %}
                                  
                                  
 							<div class="form-group">
