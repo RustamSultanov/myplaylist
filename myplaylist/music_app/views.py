@@ -83,33 +83,14 @@ def base(request):
 
 @login_required
 def create_employee_view(request):
-    form_user = RegistrationEmployeeMainForm(request.POST or None, request.FILES or None,prefix='user')
-    form_useraccept = RegistrationEmployeeAdditionForm(request.POST or None, request.FILES or None, prefix='useraccept')
-    if form_user.is_valid() and form_useraccept.is_valid():
-        new_user = form_user.save(commit=False)
-        username = form_user.cleaned_data['username']
-        first_name = form_user.cleaned_data['first_name']
-        last_name = form_user.cleaned_data['last_name']
-        email=form_user.cleaned_data['username']
-        new_user.email = email
-        new_user.username = username
-        new_user.first_name = first_name
-        new_user.last_name = last_name
-        new_user.set_password(form_user.cleaned_data['password'])
+    form_user = RegistrationEmployeeMainForm(request.POST or None, request.FILES or None)
+    if form_user.is_valid():
+        new_user = form_user.save()
+        
         new_user.save()
-        user_company = form_useraccept.save(commit=False)
-        user_company.user = new_user
-        user_company.company = request.user.useraccept.company
-        user_company.gov = form_useraccept.cleaned_data['gov']
-        user_company.phone_number = form_useraccept.cleaned_data['phone_number']
-        user_company.date_birth = form_useraccept.cleaned_data['date_birth']
-        user_company.social_net = form_useraccept.cleaned_data['social_net']
-        user_company.position = form_useraccept.cleaned_data['position']
-        user_company.avatar = form_useraccept.cleaned_data['avatar']
-        user_company.save()
-        return HttpResponseRedirect(reverse('employee_list'))
+        return HttpResponseRedirect(reverse('base'))
     context = {
-        'form_user': form_user,'form_useraccept': form_useraccept
+        'form_user': form_user
     }
     return render(request, 'create-employee.html', context)
 

@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import AuthenticationForm
-from .models import User
+from .models import User, Track
 from django.db import models
 
 
@@ -94,28 +94,20 @@ class LoginImpForm(AuthenticationForm):
 #                 }
 
 
-# class RegistrationEmployeeMainForm(forms.ModelForm):
-#     password_check = forms.CharField(widget=forms.PasswordInput(attrs={ 'class' : 'form-control'}))
-#     class Meta:
-#         model = User
-#         fields =  [
-#                 'username','first_name','last_name','email','password'
-#                  ]
+class RegistrationEmployeeMainForm(forms.ModelForm):
+    class Meta:
+        model = Track
+        fields =  [
+                'name','artist','rating','email','image','audio_file'
+                 ]
                  
-#         widgets = {
-#                 'username': forms.EmailInput(attrs={'class' : 'form-control',}),
-#                 'first_name': forms.TextInput(attrs={'class' : 'form-control',}),
-#                 'password' : forms.PasswordInput(attrs={'class' : 'form-control'}),
-#                 'last_name': forms.TextInput(attrs={'class' : 'form-control',})
-#                 }
-#     def clean(self):
-#         username = self.cleaned_data['username']
-#         if User.objects.filter(username=username).exists():
-#             raise forms.ValidationError('Пользователь с такой почтой уже зарегистрирован')
-#         password_check = self.cleaned_data['password_check']
-#         password = self.cleaned_data['password']
-#         if password_check!=password:
-#             raise forms.ValidationError('Пароль не совпадает!')
+        widgets = {
+                'name': forms.TextInput(attrs={'class' : 'form-control',}),
+                'artist': forms.TextInput(attrs={'class' : 'form-control',}),
+                'image' : forms.FileInput(attrs={'class' : 'form-control'}),
+                'rating': forms.Select(attrs={'class' : 'custom-select',}),
+                }
+    
 
 
 # class RegistrationEmployeeAdditionForm(forms.ModelForm):
