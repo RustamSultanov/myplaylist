@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import AuthenticationForm
 from .models import User, Track
 from django.db import models
+from audiofield.widgets import CustomerAudioFileWidget
 
 
 User = get_user_model()
@@ -95,7 +96,7 @@ class LoginImpForm(AuthenticationForm):
 
 
 class UploadTrackForm(forms.ModelForm):
-    audio_file = forms.FileField(widget=forms.FileInput(attrs={'class' : 'form-control'}))
+    audio_file = forms.FileField(widget=CustomerAudioFileWidget(attrs={'class' : 'form-control'}))
     class Meta:
         model = Track
         fields =  [
