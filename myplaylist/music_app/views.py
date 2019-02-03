@@ -399,14 +399,10 @@ def employee_list(request):
 #         return HttpResponseRedirect(f'../lk-accepted-list/info-{comment_id}-comment')
 #     return render(request, 'comment_info.html', {'form': form,'disputs':disputs,'comment':comment,'comment_count':comment_count,'accept_count':accept_count})
 
-# @login_required
-# @user_passes_test(imp_check)
-# def employee_info(request, user_id):
-#     user = User.objects.get(id=user_id)
-#     comment_count = comment_counter(user=user)
-#     accept_count = Comment.objects.filter(recipient_user=user.id,accept=False,failure=False).count()
-#     verify_count = Comment.objects.filter(recipient_user=user.id,accept=True).count() + Comment.objects.filter(user=user.id,accept=True).count() 
-#     return render(request, 'employee.html', {'user':user,'comment_count':comment_count,'accept_count':accept_count,'verify_count':verify_count})
+@login_required
+def employee_info(request, user_id):
+    user = User.objects.get(id=user_id)
+    return render(request, 'employee.html', {'user':user})
 
 # @login_required
 # @user_passes_test(imp_check)
