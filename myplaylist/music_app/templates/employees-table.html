@@ -74,7 +74,8 @@
 {% endif %}
 
 							</td>
-							<td class="text-center text-nowrap"><a href=""><button type="button" class="btn btn-default btn-xs icon-btn md-btn-flat user-tooltip" title="" data-original-title="Edit"><i class="ion ion-md-create"></i></button></a>&nbsp;&nbsp;<div class="btn-group"><button type="button" class="btn btn-default btn-xs icon-btn md-btn-flat dropdown-toggle hide-arrow user-tooltip" title="" data-toggle="dropdown" data-original-title="Actions" aria-expanded="false"><i class="fa fa-times"></i></button><div class="dropdown-menu dropdown-menu-right" x-placement="top-end" style="position: absolute; top: -113px; left: -140px; will-change: top, left;"><a class="dropdown-item" href="">Посмотреть профиль</a></div></div></td>
+							<td class="text-center text-nowrap"><a href=""><button type="button" class="btn btn-default btn-xs icon-btn md-btn-flat user-tooltip" title="" data-original-title="Edit"><i class="ion ion-md-create"></i></button></a>&nbsp;&nbsp;
+								<a class="delete" href="{% url 'delete_track' employee.id %}"><button type="button" class="btn btn-default btn-xs icon-btn md-btn-flat dropdown-toggle hide-arrow user-tooltip" title="" data-toggle="dropdown" data-original-title="Actions" aria-expanded="false"><i class="fa fa-times"></i></button></a></td>
 						</tr>{% endfor %}
 
 					</tbody>
@@ -86,7 +87,15 @@
 		</div>
 		<!-- / Layout container -->
 
-	
+	<script>
+$( document ).ready(function() {
+    $( ".delete" ).click(function() {
+       if ((confirm("Вы действительно хотите удалить трек?")) == false) {
+          event.preventDefault();
+       };
+    });
+});
+</script>
 
 {% block script2 %}
 

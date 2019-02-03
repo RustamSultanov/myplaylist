@@ -9,6 +9,7 @@ from django.db.models import Count
 import os
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import authenticate
+from django.shortcuts import get_object_or_404
 
 
 # def imp_check(user):
@@ -205,10 +206,11 @@ def employee_list(request):
 #     return render(request, 'competence_form.html',{'form': form,'competence_list':competence_list,'comment_count':comment_count,'accept_count':accept_count})
 
 
-# def delete_comment(request, comment_id):
-#     author_id = request.user
-#     Comment.objects.get(user=author_id,id=comment_id,accept=False).delete()
-#     return HttpResponseRedirect(reverse('lichniy-kabinet'))
+def delete_track(request, track_id):
+    author_id = request.user
+    track = get_object_or_404(Track,user=author_id,id=track_id)
+    track.delete()
+    return HttpResponseRedirect(reverse('base'))
 
 
 # def lk_comment(request, comment_id):
