@@ -28,7 +28,7 @@
 					<div class="nav-tabs-top">
 						<ul class="nav nav-tabs">
 							<li class="nav-item">
-								<a class="nav-link active" data-toggle="tab" href="#user-edit-account">Аккунт</a>
+								<a class="nav-link active" data-toggle="tab" href="#user-edit-account">Аккаунт</a>
 							</li>
 							
 						</ul>
@@ -43,11 +43,11 @@
 					{% if user.profile_picture %}	<img src="{{ user.profile_picture.url }}" alt="" class="d-block ui-w-80">{% else %}{% endif %}
 										<div class="media-body ml-3">
 											<label class="form-label d-block mb-2">Аватар</label>
-											<label class="btn btn-outline-success btn-sm">
-												Загрузить фото
+											
+												
 												{{ form_user.profile_picture }}
-											</label>&nbsp;
-											<button type="button" class="btn btn-default btn-sm md-btn-flat">Сбросить</button>
+											&nbsp;
+											<!-- <button type="button" class="btn btn-default btn-sm md-btn-flat">Сбросить</button> -->
 										</div>
 									</div>
 
