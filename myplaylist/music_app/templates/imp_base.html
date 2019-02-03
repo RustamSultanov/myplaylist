@@ -61,94 +61,13 @@
     <div class="bg-primary"></div>
 </div>{% endblock %}
     	{% block header %}
-    		<!-- Layout wrapper -->
-<div class="layout-wrapper layout-2">
-    <div class="layout-inner">
-
-        <!-- Layout container -->
-        <div class="layout-container">
-            <!-- Layout navbar -->
-            <nav class="navbar fixed-top navbar-expand-lg bg-white">
-                <div class="container">
-
-                    <a href="#" class="navbar-brand flex-grow-0 text-large font-weight-bolder line-height-1 py-3 mr-5">
-                        <img src="{% static "assets/img/logo.png" %}" alt="">
-                    </a>
-
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".header-1">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="header-1 navbar-collapse collapse justify-content-center flex-grow-1 mb-4 mb-lg-0">
-                        <div class="navbar-nav navbar-my-menu">
-                            <a class="nav-item nav-link active" href="#">Обращения <sup class="text-muted">5</sup></a>
-                            <a class="nav-item nav-link" href="#">Заказы <sup class="text-muted">2</sup></a>
-                            <a class="nav-item nav-link" href="#">Каталог</a>
-                            <a class="nav-item nav-link" href="#">Сотрудники</a>
-                            <a class="nav-item nav-link" href="#">Настройки</a>
-                        </div>
-                    </div>
-
-                    <div class="header-1 navbar-collapse collapse justify-content-lg-end flex-grow-0">
-                        <div class="nav navbar-nav align-items-lg-center">
-
-                            <span class="nav-item">1 250 000 ₽</span>
-                            <!-- Search -->
-                            <a href="#" class="nav-item nav-link ml-2">
-                                <span class="badge badge-primary badge-dot indicator"></span>
-                                <i class="far fa-comments navbar-icon align-middle"></i>
-
-                            </a>
-
-                            <a class="nav-item nav-link dropdown-toggle hide-arrow ml-lg-2" href="#">
-                                <span class="badge badge-primary badge-dot indicator"></span>
-                                <i class="ion ion-md-notifications-outline navbar-icon align-middle"></i>
-
-                                <span class="d-lg-none align-middle">&nbsp; Уведомления</span>
-                            </a>
-
-                            <div class="demo-navbar-user nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
-                  <span class="d-inline-flex flex-lg-row-reverse align-items-center align-middle">
-                  {% if request.user.useraccept.avatar %}  <img src="{{ request.user.useraccept.avatar.url }}" alt class="d-block ui-w-30 rounded-circle">{% else %}{% endif %}
-
-                    <span class="px-1 mr-lg-2 ml-2 ml-lg-0">{{ request.user.first_name }} {{ request.user.last_name }}</span>
-                  </span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="{% url 'employee_info' request.user.id %}" class="dropdown-item"><i class="ion ion-ios-person text-lightest"></i> &nbsp; Мой профиль</a>
-                                    <a href="javascript:void(0)" class="dropdown-item"><i class="ion ion-ios-mail text-lightest"></i> &nbsp; Messages</a>
-                                    <a href="javascript:void(0)" class="dropdown-item"><i class="ion ion-md-settings text-lightest"></i> &nbsp; Account settings</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a href="{% url 'logout' %}" class="dropdown-item"><i class="ion ion-ios-log-out text-danger"></i> &nbsp; Выйти</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </nav>
-            <!-- / Layout navbar -->
+    		{% include "header.html" %}
     	{% endblock %}
         {% block content %}{% endblock %}
-        
-    </div>
+        {% block footer %}
+            {% include "footer.html" %}
+        {% endblock %}
 
-    <!-- Overlay -->
-    <div class="layout-overlay layout-sidenav-toggle"></div>
-</div>
-<!-- / Layout wrapper -->
-
-
-<script>
-    $('.header-1 .navbar-search-input > input').on('focus', function() {
-        $('.header-1 .navbar-search-box').addClass('active');
-    });
-    $('.header-1 .navbar-search-cancel').on('click', function(e) {
-        e.preventDefault();
-        $('.header-1 .navbar-search-box').removeClass('active');
-    });
-</script>
 
 <!-- / Content -->
 

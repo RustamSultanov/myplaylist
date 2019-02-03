@@ -1,137 +1,70 @@
 {% load static %}
-<div id="app">
-  <div class="mobile-nav">
-  <button class="mobile-nav__burger js-mobile-burger">
-    <svg width="18" height="12">
-      <use href="./images/fill.svg#burger"></use>
-    </svg>
-  </button>
-  <a href="/" class="sidebar__logotype logotype">
-    <span class="logotype__visual">
-      Ремонт<br>
-      <b>сделан</b>
-    </span>
-  </a>
-  <span class="profile__img-wrapper">
-    <img src="{% static "./images/avatar.png" %}" srcset="/static/images/avatar@2x.png 2x" width="40" height="40" alt="Аватар юзера">
-  </span>
-</div>
+<!-- Layout wrapper -->
+<div class="layout-wrapper layout-2">
+    <div class="layout-inner">
 
+        <!-- Layout container -->
+        <div class="layout-container">
+            <!-- Layout navbar -->
+            <nav class="navbar fixed-top navbar-expand-lg bg-white">
+                <div class="container">
 
+                    <a href="#" class="navbar-brand flex-grow-0 text-large font-weight-bolder line-height-1 py-3 mr-5">
+                        <img src="{% static "assets/img/logo.png" %}" alt="">
+                    </a>
 
-  <div class="layout layout--user">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".header-1">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
+                    <div class="header-1 navbar-collapse collapse justify-content-center flex-grow-1 mb-4 mb-lg-0">
+                        <div class="navbar-nav navbar-my-menu">
+                            <a class="nav-item nav-link active" href="#">Обращения <sup class="text-muted">5</sup></a>
+                            <a class="nav-item nav-link" href="#">Заказы <sup class="text-muted">2</sup></a>
+                            <a class="nav-item nav-link" href="#">Каталог</a>
+                            <a class="nav-item nav-link" href="#">Сотрудники</a>
+                            <a class="nav-item nav-link" href="#">Настройки</a>
+                        </div>
+                    </div>
 
-<!-- id="slide-out2" -->
-<!-- sidenav2 -->
+                    <div class="header-1 navbar-collapse collapse justify-content-lg-end flex-grow-0">
+                        <div class="nav navbar-nav align-items-lg-center">
 
-    <aside  class=" sidebar is-mobile">
-  <a href="/" class="sidebar__logotype logotype">
-  <span class="logotype__visual">
-    Ремонт<br>
-    <b>сделан</b>
-  </span>
-  <p class="logotype__description">
-    Онлайн сервис ремонта с защитой сделок
-  </p>
-</a>
+                            <span class="nav-item">1 250 000 ₽</span>
+                            <!-- Search -->
+                            <a href="#" class="nav-item nav-link ml-2">
+                                <span class="badge badge-primary badge-dot indicator"></span>
+                                <i class="far fa-comments navbar-icon align-middle"></i>
 
-  
+                            </a>
 
+                            <a class="nav-item nav-link dropdown-toggle hide-arrow ml-lg-2" href="#">
+                                <span class="badge badge-primary badge-dot indicator"></span>
+                                <i class="ion ion-md-notifications-outline navbar-icon align-middle"></i>
 
+                                <span class="d-lg-none align-middle">&nbsp; Уведомления</span>
+                            </a>
 
-<div class="sidebar-nav nav">
-  <ul class="nav__list list-unstyled">
-    
-      <li class="nav__item">
-        <a href="/" class="nav__link">
-          Каталог ремонтов
-        </a>
-      </li>
-    
-      <li class="nav__item">
-        <a href="/" class="nav__link">
-          Онлайн конструктор
-        </a>
-      </li>
-    
-      <li class="nav__item">
-        <a href="/" class="nav__link">
-          Исполнители
-        </a>
-      </li>
-    
-      <li class="nav__item">
-        <a href="/" class="nav__link">
-          О проекте
-        </a>
-      </li>
-    
-  </ul>
-</div>
+                            <div class="demo-navbar-user nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                  <span class="d-inline-flex flex-lg-row-reverse align-items-center align-middle">
+                  {% if request.user.useraccept.avatar %}  <img src="{{ request.user.useraccept.avatar.url }}" alt class="d-block ui-w-30 rounded-circle">{% else %}{% endif %}
 
-  
-{% if request.user.is_authenticated %} 
-<div class="sidebar__profile profile">
-  
-  <header class="profile__header">
-    <span class="profile__img-wrapper">
-      <img src="{% static "./images/avatar.png" %}" srcset="/static/images/avatar@2x.png 2x" width="40" height="40" alt="Аватар юзера">
-    </span>
-    <span class="profile__username">
-       {{ request.user.first_name }} {{ request.user.last_name }}
-    </span>
-  </header>
-  
+                    <span class="px-1 mr-lg-2 ml-2 ml-lg-0">{{ request.user.first_name }} {{ request.user.last_name }}</span>
+                  </span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="{% url 'employee_info' request.user.id %}" class="dropdown-item"><i class="ion ion-ios-person text-lightest"></i> &nbsp; Мой профиль</a>
+                                    <a href="javascript:void(0)" class="dropdown-item"><i class="ion ion-ios-mail text-lightest"></i> &nbsp; Messages</a>
+                                    <a href="javascript:void(0)" class="dropdown-item"><i class="ion ion-md-settings text-lightest"></i> &nbsp; Account settings</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a href="{% url 'logout' %}" class="dropdown-item"><i class="ion ion-ios-log-out text-danger"></i> &nbsp; Выйти</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-  
-  <ul class="profile__info-list list-unstyled">
-    
-      <li class="profile__info-item">
-        <a href="/" class="profile__info-link">
-          Заявки -
-          <span class="profile__info-count">2</span>
-        </a>
-      </li>
-    
-      <li class="profile__info-item">
-        <a href="/" class="profile__info-link">
-          Заказы -
-          <span class="profile__info-count">7</span>
-        </a>
-      </li>
-    
-      <li class="profile__info-item">
-        <a href="/" class="profile__info-link">
-          Сообщения -
-          <span class="profile__info-count">25</span>
-        </a>
-      </li>
-    
-  </ul>
-  
-
-  
-  <ul class="profile__control list-unstyled">
-    <li class="profile__control-item">
-      <a href="/" class="profile__control-link">Настройки</a>
-    </li>
-    <li class="profile__control-item">
-      <a href="{% url 'logout' %}" class="profile__control-link">Выход</a>
-    </li>
-  </ul>
-  
-</div>{% else %}
-<ul class="profile__control profile__control--no-user list-unstyled">
-    <li class="profile__control-item">
-      <a href="{% url 'register' %}" class="profile__control-link">Регистрация</a>
-    </li>
-    <li class="profile__control-item">
-      <a href="{% url 'login' %}" class="profile__control-link">Войти</a>
-    </li>
-  </ul>
-{% endif %}
-</aside>
-
-
+                </div>
+            </nav>
+            <!-- / Layout navbar -->
   
