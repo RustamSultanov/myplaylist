@@ -95,7 +95,7 @@ class LoginImpForm(AuthenticationForm):
 
 
 class UploadTrackForm(forms.ModelForm):
-    audio_file = forms.FileField()
+    audio_file = forms.FileField(widget=forms.FileInput(attrs={'class' : 'form-control'}))
     class Meta:
         model = Track
         fields =  [

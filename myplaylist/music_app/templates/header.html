@@ -10,7 +10,7 @@
                 <div class="container">
 
                     <a href="#" class="navbar-brand flex-grow-0 text-large font-weight-bolder line-height-1 py-3 mr-5">
-                        <img src="{% static "assets/img/logo.png" %}" alt="logo" style="width: 75px;">
+                        <img src="{% static "assets/img/logo.png" %}" alt="logo" style="width: 80px;">
                     </a>
 
                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".header-1">
@@ -19,7 +19,7 @@
 
                     <div class="header-1 navbar-collapse collapse justify-content-center flex-grow-1 mb-4 mb-lg-0">
                         <div class="navbar-nav navbar-my-menu">
-                            <a class="nav-item" href="#">Загрузить трек</a>
+                            <a class="nav-item" href="{% url 'upload_track' %}">Загрузить трек</a>
                            
                         </div>
                     </div>
