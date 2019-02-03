@@ -82,7 +82,7 @@ def base(request):
     return render(request, 'base.html',)
 
 @login_required
-def create_employee_view(request):
+def upload_track_view(request):
     form_user = UploadTrackForm(request.POST or None, request.FILES or None)
     if form_user.is_valid():
         new_track = form_user.save(commit=False)
@@ -97,7 +97,7 @@ def create_employee_view(request):
     context = {
         'form_user': form_user
     }
-    return render(request, 'create-employee.html', context)
+    return render(request, 'upload_track.html', context)
 
 # def registration_employee_view(request):
 #     form = RegistrationEmployeeForm(request.POST or None, request.FILES or None)

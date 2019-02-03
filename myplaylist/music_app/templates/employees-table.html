@@ -51,22 +51,22 @@
 								<div>{{ employee.created_date.date }}</div>
 								<div>{{ employee.created_date.time }}</div>
 							</td>
-							<td>{% if employee.user.useraccept.rating == 5 %} 
+							<td>{% if employee.rating == 5 %} 
 								<i class="ion ion-md-star text-warning"></i>
 								<i class="ion ion-md-star text-warning"></i>
 								<i class="ion ion-md-star text-warning"></i>
 								<i class="ion ion-md-star text-warning"></i>
 								<i class="ion ion-md-star text-warning"></i>
-								{% elif employee.user.useraccept.rating == 4 %}
+								{% elif employee.rating == 4 %}
 								<i class="ion ion-md-star text-warning"></i>
 								<i class="ion ion-md-star text-warning"></i>
 								<i class="ion ion-md-star text-warning"></i>
 								<i class="ion ion-md-star text-warning"></i>
-								{% elif employee.user.useraccept.rating == 3 %}
+								{% elif employee.rating == 3 %}
 								<i class="ion ion-md-star text-warning"></i>
 								<i class="ion ion-md-star text-warning"></i>
 								<i class="ion ion-md-star text-warning"></i>
-								{% elif employee.user.useraccept.rating == 2 %}
+								{% elif employee.rating == 2 %}
 								<i class="ion ion-md-star text-warning"></i>
 								<i class="ion ion-md-star text-warning"></i>
 								{% else %}
@@ -84,7 +84,7 @@ $( document ).ready(function() {
 $('[name = 'delete']').click(function() {
 alert('hey');
 });
-}); 
+}
 </script>
 
 			</div>
