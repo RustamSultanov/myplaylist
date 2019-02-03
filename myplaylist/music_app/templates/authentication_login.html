@@ -88,6 +88,9 @@
               <span class="helper-text" data-error="Неправильный формат почты"></span>
             </div>
             <div class="form-group">
+              {% for message in form.errors.values %}
+                                    {{ message }}
+                                  {% endfor %}
               <label class="form-label d-flex justify-content-between align-items-end">
                 <div>Пароль</div>
             
