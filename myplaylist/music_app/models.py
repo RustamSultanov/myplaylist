@@ -49,7 +49,6 @@ class User(AbstractUser):
 class Track(AudioFile):
 	artist = models.CharField(max_length=200, null=True, blank=True)
 	image = models.ImageField(upload_to='upload/audiofiles_img', null=True, blank=True)
-	user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 	
 # # Create your models here.
 # # def get_custom_username(self):
