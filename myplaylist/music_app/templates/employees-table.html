@@ -75,7 +75,7 @@
 
 							</td>
 							<td class="text-center text-nowrap"><a href=""><button type="button" class="btn btn-default btn-xs icon-btn md-btn-flat user-tooltip" title="" data-original-title="Edit"><i class="ion ion-md-create"></i></button></a>&nbsp;&nbsp;
-								<a class="delete" href="{% url 'delete_track' employee.id %}"><i class="fa fa-times"></i></a></td>
+								<a class="delete" href="{% url 'delete_track' employee.id %}"><button type="button" class="btn btn-default btn-xs icon-btn md-btn-flat dropdown-toggle hide-arrow user-tooltip" title="" data-toggle="dropdown" data-original-title="Actions" aria-expanded="false"><i class="fa fa-times"></i></button></a></td>
 						</tr>{% endfor %}
 
 					</tbody>
@@ -95,7 +95,7 @@ $( document ).ready(function() {
 		</div>
 		<!-- / Layout container -->
 
-
+	
 
 {% block script2 %}
 
