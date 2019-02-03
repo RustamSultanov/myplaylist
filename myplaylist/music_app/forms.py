@@ -95,10 +95,11 @@ class LoginImpForm(AuthenticationForm):
 
 
 class UploadTrackForm(forms.ModelForm):
+    audio_file = forms.FileField()
     class Meta:
         model = Track
         fields =  [
-                'name','artist','rating','image','audio_file'
+                'name','artist','rating','image',
                  ]
                  
         widgets = {
@@ -106,7 +107,7 @@ class UploadTrackForm(forms.ModelForm):
                 'artist': forms.TextInput(attrs={'class' : 'form-control',}),
                 'image' : forms.FileInput(attrs={'class' : 'form-control'}),
                 'rating': forms.Select(attrs={'class' : 'custom-select',}),
-                 'audio_file': forms.FileInput(),
+                
                 }
     
 

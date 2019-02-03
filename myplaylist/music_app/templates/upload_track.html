@@ -1,7 +1,7 @@
 {% extends "edit-employee.html" %}
 {% block create %}
 <h4 class="font-weight-bold py-3 mb-4">
-						Создание сотрудника 
+						Загрузка трека
 					</h4>
 
 					<div class="nav-tabs-top">
@@ -9,9 +9,7 @@
 							<li class="nav-item">
 								<a class="nav-link active" data-toggle="tab" href="#user-edit-account">Аккунт</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link" data-toggle="tab" href="#user-edit-info">Информация</a>
-							</li>
+							
 						</ul>
 						<div class="tab-content">
 							<!--Табы раз-->
@@ -36,11 +34,7 @@
 {{ form_user.errors }}
                                  
                                  
-								<!-- 	<div class="form-group">
-										<label class="form-label">Логин</label>
-										<input type="text" class="form-control mb-1" value="ivan1944">
-										<a href="javascript:void(0)" class="small">Сброс пароля</a>
-									</div> -->
+							
 									<div class="form-group">
 										<label class="form-label">Название трека</label>
 									{{ form_user.name }}	
