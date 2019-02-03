@@ -98,14 +98,14 @@ class RegistrationEmployeeMainForm(forms.ModelForm):
     class Meta:
         model = Track
         fields =  [
-                'name','artist','rating','email','image','audio_file'
+                'name','artist','image','audio_file'
                  ]
                  
         widgets = {
                 'name': forms.TextInput(attrs={'class' : 'form-control',}),
                 'artist': forms.TextInput(attrs={'class' : 'form-control',}),
                 'image' : forms.FileInput(attrs={'class' : 'form-control'}),
-                'rating': forms.Select(attrs={'class' : 'custom-select',}),
+                # 'rating': forms.Select(attrs={'class' : 'custom-select',}),
                 }
     
 
