@@ -81,38 +81,37 @@ from django.contrib.auth import authenticate
 def base(request):
     return render(request, 'base.html',)
 
-# @login_required
-# @user_passes_test(imp_check)
-# def create_employee_view(request):
-#     form_user = RegistrationEmployeeMainForm(request.POST or None, request.FILES or None,prefix='user')
-#     form_useraccept = RegistrationEmployeeAdditionForm(request.POST or None, request.FILES or None, prefix='useraccept')
-#     if form_user.is_valid() and form_useraccept.is_valid():
-#         new_user = form_user.save(commit=False)
-#         username = form_user.cleaned_data['username']
-#         first_name = form_user.cleaned_data['first_name']
-#         last_name = form_user.cleaned_data['last_name']
-#         email=form_user.cleaned_data['username']
-#         new_user.email = email
-#         new_user.username = username
-#         new_user.first_name = first_name
-#         new_user.last_name = last_name
-#         new_user.set_password(form_user.cleaned_data['password'])
-#         new_user.save()
-#         user_company = form_useraccept.save(commit=False)
-#         user_company.user = new_user
-#         user_company.company = request.user.useraccept.company
-#         user_company.gov = form_useraccept.cleaned_data['gov']
-#         user_company.phone_number = form_useraccept.cleaned_data['phone_number']
-#         user_company.date_birth = form_useraccept.cleaned_data['date_birth']
-#         user_company.social_net = form_useraccept.cleaned_data['social_net']
-#         user_company.position = form_useraccept.cleaned_data['position']
-#         user_company.avatar = form_useraccept.cleaned_data['avatar']
-#         user_company.save()
-#         return HttpResponseRedirect(reverse('employee_list'))
-#     context = {
-#         'form_user': form_user,'form_useraccept': form_useraccept
-#     }
-#     return render(request, 'create-employee.html', context)
+@login_required
+def create_employee_view(request):
+    form_user = RegistrationEmployeeMainForm(request.POST or None, request.FILES or None,prefix='user')
+    form_useraccept = RegistrationEmployeeAdditionForm(request.POST or None, request.FILES or None, prefix='useraccept')
+    if form_user.is_valid() and form_useraccept.is_valid():
+        new_user = form_user.save(commit=False)
+        username = form_user.cleaned_data['username']
+        first_name = form_user.cleaned_data['first_name']
+        last_name = form_user.cleaned_data['last_name']
+        email=form_user.cleaned_data['username']
+        new_user.email = email
+        new_user.username = username
+        new_user.first_name = first_name
+        new_user.last_name = last_name
+        new_user.set_password(form_user.cleaned_data['password'])
+        new_user.save()
+        user_company = form_useraccept.save(commit=False)
+        user_company.user = new_user
+        user_company.company = request.user.useraccept.company
+        user_company.gov = form_useraccept.cleaned_data['gov']
+        user_company.phone_number = form_useraccept.cleaned_data['phone_number']
+        user_company.date_birth = form_useraccept.cleaned_data['date_birth']
+        user_company.social_net = form_useraccept.cleaned_data['social_net']
+        user_company.position = form_useraccept.cleaned_data['position']
+        user_company.avatar = form_useraccept.cleaned_data['avatar']
+        user_company.save()
+        return HttpResponseRedirect(reverse('employee_list'))
+    context = {
+        'form_user': form_user,'form_useraccept': form_useraccept
+    }
+    return render(request, 'create-employee.html', context)
 
 # def registration_employee_view(request):
 #     form = RegistrationEmployeeForm(request.POST or None, request.FILES or None)
@@ -139,46 +138,42 @@ def base(request):
 #     return render(request, 'register_form.html', context)
 
 
-# @login_required
-# @user_passes_test(imp_check)
-# def edit_employee_view(request,user_id):
-#     user = User.objects.get(id=user_id)
-#     useraccept = UserAccept.objects.get(id=user.useraccept.id)
-#     form_user = EmployeeMainForm(request.POST or None, request.FILES or None, initial=model_to_dict(user), instance=user,prefix='user')
-#     form_useraccept = EmployeeAdditionForm(request.POST or None, request.FILES or None, initial=model_to_dict(useraccept), instance=useraccept,prefix='useraccept')
-#     if form_user.is_valid() and form_useraccept.is_valid():
-#         new_user = form_user.save(commit=False)
-#         username = form_user.cleaned_data['username']
-#         first_name = form_user.cleaned_data['first_name']
-#         last_name = form_user.cleaned_data['last_name']
-#         email=form_user.cleaned_data['username']
-#         new_user.email = email
-#         new_user.username = username
-#         new_user.first_name = first_name
-#         new_user.last_name = last_name
-#         new_user.save()
-#         user_company = form_useraccept.save(commit=False)
-#         user_company.gov = form_useraccept.cleaned_data['gov']
-#         user_company.phone_number = form_useraccept.cleaned_data['phone_number']
-#         user_company.date_birth = form_useraccept.cleaned_data['date_birth']
-#         user_company.social_net = form_useraccept.cleaned_data['social_net']
-#         user_company.position = form_useraccept.cleaned_data['position']
-#         user_company.avatar = form_useraccept.cleaned_data['avatar']
-#         user_company.save()
-#         return HttpResponseRedirect(reverse('employee_list'))
-#     context = {
-#         'form_user': form_user,'form_useraccept': form_useraccept,'user': user,'useraccept': useraccept
-#     }
-#     return render(request, 'edit-employee.html', context)
+@login_required
+def edit_employee_view(request,user_id):
+    user = User.objects.get(id=user_id)
+    useraccept = UserAccept.objects.get(id=user.useraccept.id)
+    form_user = EmployeeMainForm(request.POST or None, request.FILES or None, initial=model_to_dict(user), instance=user,prefix='user')
+    form_useraccept = EmployeeAdditionForm(request.POST or None, request.FILES or None, initial=model_to_dict(useraccept), instance=useraccept,prefix='useraccept')
+    if form_user.is_valid() and form_useraccept.is_valid():
+        new_user = form_user.save(commit=False)
+        username = form_user.cleaned_data['username']
+        first_name = form_user.cleaned_data['first_name']
+        last_name = form_user.cleaned_data['last_name']
+        email=form_user.cleaned_data['username']
+        new_user.email = email
+        new_user.username = username
+        new_user.first_name = first_name
+        new_user.last_name = last_name
+        new_user.save()
+        user_company = form_useraccept.save(commit=False)
+        user_company.gov = form_useraccept.cleaned_data['gov']
+        user_company.phone_number = form_useraccept.cleaned_data['phone_number']
+        user_company.date_birth = form_useraccept.cleaned_data['date_birth']
+        user_company.social_net = form_useraccept.cleaned_data['social_net']
+        user_company.position = form_useraccept.cleaned_data['position']
+        user_company.avatar = form_useraccept.cleaned_data['avatar']
+        user_company.save()
+        return HttpResponseRedirect(reverse('employee_list'))
+    context = {
+        'form_user': form_user,'form_useraccept': form_useraccept,'user': user,'useraccept': useraccept
+    }
+    return render(request, 'edit-employee.html', context)
 
-# @login_required
-# @user_passes_test(imp_check)
-# def employee_list(request):
-#     user=request.user
-#     comment_count = comment_counter(user=user)
-#     accept_count = Comment.objects.filter(recipient_user=user.id,accept=False,failure=False).count()
-#     employee_list = UserAccept.objects.select_related('user').filter(company=user.useraccept.company)
-#     return render(request, 'employees-table.html',{'employee_list':employee_list,'comment_count':comment_count,'accept_count':accept_count})
+@login_required
+def employee_list(request):
+    user=request.user
+    employee_list = UserAccept.objects.select_related('user').filter(company=user.useraccept.company)
+    return render(request, 'employees-table.html',{'employee_list':employee_list})
 
 
 # def lichniy_kabinet(request):
