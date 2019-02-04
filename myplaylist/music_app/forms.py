@@ -93,13 +93,11 @@ class LoginImpForm(AuthenticationForm):
 #                 'text': forms.Textarea(attrs={'placeholder' : 'Напишите сообщение','class' : 'form-control',})
 #                 }
 
-
-class UploadTrackForm(forms.ModelForm):
-    audio_file = forms.FileField(widget=CustomerAudioFileWidget(attrs={'class' : 'form-control'}))
+class EditTrackForm(forms.ModelForm):
     class Meta:
         model = Track
         fields =  [
-                'name','artist','rating','image','audio_file'
+                'name','artist','rating','image'
                  ]
                  
         widgets = {
@@ -108,6 +106,14 @@ class UploadTrackForm(forms.ModelForm):
                 'image' : forms.FileInput(attrs={'class' : 'form-control'}),
                 'rating': forms.Select(attrs={'class' : 'custom-select',}),
                 }
+
+class UploadTrackForm(EditTrackForm):
+    audio_file = forms.FileField(widget=CustomerAudioFileWidget(attrs={'class' : 'form-control'}))
+    class Meta(EditTrackForm.Meta):
+        model = Track
+        fields =  [
+                'name','artist','rating','image','audio_file'
+                 ]
     
 
 

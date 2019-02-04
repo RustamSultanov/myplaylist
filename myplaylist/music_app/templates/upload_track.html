@@ -1,9 +1,10 @@
 {% extends "edit-employee.html" %}
 {% block create %}
+{% block name %}
 <h4 class="font-weight-bold py-3 mb-4">
 						Загрузка трека
 					</h4>
-
+{% endblock %}
 					<div class="nav-tabs-top">
 						
 						<div class="tab-content">
@@ -33,12 +34,12 @@
 									<div class="form-group">
 										<label class="form-label">Исполнитель</label>
 										{{ form_user.artist }}
-									</div>
+									</div>{% block file %}
 									<div class="form-group">
 										<label class="form-label">Аудио-файл</label>
 									{{ form_user.audio_file }}	
 									</div>
-									
+									{% endblock %}
 									<div class="form-group">
 										<label class="form-label">Оценка</label>
 										{{ form_user.rating }}
