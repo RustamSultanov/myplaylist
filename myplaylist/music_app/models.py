@@ -5,10 +5,10 @@ from audiofield.models import AudioFile
 
 
 class UserManager(BaseUserManager):
-    """
-    A custom user manager to deal with emails as unique identifiers for auth
-    instead of usernames. The default that's used is "UserManager"
-    """
+	"""
+	A custom user manager to deal with emails as unique identifiers for auth
+	instead of usernames. The default that's used is "UserManager"
+	"""
 	def create_user(self, email, profile_picture=None, password=None):
 		"""
 		Creates and saves a User with the given email, date of
@@ -26,20 +26,20 @@ class UserManager(BaseUserManager):
 		user.save(using=self._db)
 		return user
 
-    def create_superuser(self, email, profile_picture=None, password):
-        """
-        Creates and saves a superuser with the given email, date of
-        birth and password.
-        """
-        user = self.create_user(
-            email,
-            password=password,
-            profile_picture=profile_picture,
-        )
-        user.is_admin = True
-        user.save(using=self._db)
-        return user
-    
+	def create_superuser(self, email, profile_picture=None, password):
+		"""
+		Creates and saves a superuser with the given email, date of
+		birth and password.
+		"""
+		user = self.create_user(
+		    email,
+		    password=password,
+		    profile_picture=profile_picture,
+		)
+		user.is_admin = True
+		user.save(using=self._db)
+		return user
+
 
 class User(AbstractUser):
     email = models.EmailField(max_length=254, unique=True)
