@@ -41,7 +41,7 @@
 							<td><a href="{% url 'edit_track' track.id %}">{{ forloop.counter }}</a></td>
 							<td>{% if track.artist %} {{ track.artist }}{% else %}{% endif %}</td>
 							<td>{{ track.name }}</td>
-							<td><audio src="{{ track.audio_file.url }}" onplay="other_pause([{{ forloop.counter -1 }}])" controls>Your browser does not support the audio element.</audio></td>
+							<td><audio src="{{ track.audio_file.url }}" onplay="other_pause([ {{ forloop.counter0 }} ])" controls>Your browser does not support the audio element.</audio></td>
 							<td>
 								{% if track.image %}<a href="{{ track.image.url }}">
 									<img src="{{ track.image.url }}" alt class="d-block ui-w-30 rounded-circle">
