@@ -5,7 +5,6 @@
 	<link rel="stylesheet" href="{% static "assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" %}">
 	<link rel="stylesheet" href="{% static "assets/vendor/libs/bootstrap-table/bootstrap-table.css" %}">
 	<!-- Page -->
-	<link rel="stylesheet" type="text/css" href="{% static "css/main.min.css" %}">
         {% endblock %}
 
 
@@ -42,7 +41,7 @@
 							<td><a href="{% url 'edit_track' employee.id %}">{{ forloop.counter }}</a></td>
 							<td>{% if employee.artist %} {{ employee.artist }}{% else %}{% endif %}</td>
 							<td>{{ employee.name }}</td>
-							<td class="ready-player-{{ forloop.counter }}"><audio src="{{ employee.audio_file.url }}" controls>Your browser does not support the audio element.</audio></td>
+							<td><audio src="{{ employee.audio_file.url }}" controls>Your browser does not support the audio element.</audio></td>
 							<td>
 								{% if employee.image %}<a href="{{ employee.image.url }}">
 									<img src="{{ employee.image.url }}" alt class="d-block ui-w-30 rounded-circle">
@@ -95,13 +94,7 @@ event.preventDefault();
 		<!-- / Layout container -->
 
 	
-<script src="{% static "js/app.js" %}"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {   {% for track in employee_list reversed %}
 
-            new GreenAudioPlayer('.ready-player-{{ forloop.counter }}');{% endfor %}
-        });
-    </script>
 {% block script2 %}
 
 <script src="{% static "assets/vendor/libs/tableexport/tableexport.js" %}"></script>
