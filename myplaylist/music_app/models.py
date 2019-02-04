@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.auth.models import BaseUserManager
 from audiofield.models import AudioFile
 
@@ -20,6 +20,7 @@ class UserManager(BaseUserManager):
 		user = self.model(
 		    email=self.normalize_email(email),
 		    profile_picture=profile_picture,
+		    username =self.normalize_email(email),
 		)
 
 		user.set_password(password)
@@ -40,7 +41,7 @@ class UserManager(BaseUserManager):
 		return user
 
 
-class User(AbstractUser):
+class User(AbstractBaseUser):
     email = models.EmailField(max_length=254, unique=True)
     profile_picture = models.ImageField(
         upload_to='user_data/profile_picture', null=True, blank=True)
