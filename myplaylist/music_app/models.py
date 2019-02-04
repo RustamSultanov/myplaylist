@@ -9,22 +9,22 @@ class UserManager(BaseUserManager):
     A custom user manager to deal with emails as unique identifiers for auth
     instead of usernames. The default that's used is "UserManager"
     """
-     def create_user(self, email, profile_picture=None, password=None):
-        """
-        Creates and saves a User with the given email, date of
-        birth and password.
-        """
-        if not email:
-            raise ValueError('Users must have an email address')
+	def create_user(self, email, profile_picture=None, password=None):
+		"""
+		Creates and saves a User with the given email, date of
+		birth and password.
+		"""
+		if not email:
+		    raise ValueError('Users must have an email address')
 
-        user = self.model(
-            email=self.normalize_email(email),
-            profile_picture=profile_picture,
-        )
+		user = self.model(
+		    email=self.normalize_email(email),
+		    profile_picture=profile_picture,
+		)
 
-        user.set_password(password)
-        user.save(using=self._db)
-        return user
+		user.set_password(password)
+		user.save(using=self._db)
+		return user
 
     def create_superuser(self, email, profile_picture=None, password):
         """
