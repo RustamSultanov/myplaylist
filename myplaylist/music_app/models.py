@@ -43,6 +43,19 @@ class User(AbstractUser):
     email = models.EmailField(max_length=254, unique=True)
     profile_picture = models.ImageField(
         upload_to='user_data/profile_picture', null=True, blank=True)
+    is_active = models.BooleanField(default=True)
+    is_admin = models.BooleanField(default=False)
+
+    @property
+    def is_staff(self):
+        return self.is_admin
+
+    def get_full_name(self):
+        return self.email
+
+    def get_short_name(self):
+        return self.email
+
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
