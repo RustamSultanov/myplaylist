@@ -35,7 +35,7 @@
 					</tr>
 					</thead>
 					<tbody>
-						{% for employee in employee_list %}
+						{% for employee in employee_list reversed %}
 						<tr data-index="{{ forloop.counter }}">
 							
 							<td><a href="{% url 'edit_track' employee.id %}">{{ forloop.counter }}</a></td>
