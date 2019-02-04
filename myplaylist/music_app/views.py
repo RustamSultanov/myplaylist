@@ -99,6 +99,19 @@ def upload_track_view(request):
     }
     return render(request, 'upload_track.html', context)
 
+@login_required
+def edit_track_view(request,track_id):
+    track = get_object_or_404(Track,id=track_id,user=request.user)
+    form = UploadTrackForm(request.POST or None, request.FILES or None, initial=model_to_dict(track), instance=track)
+    if form.is_valid():
+        new_user = form.save()
+        new_user.save()
+        return HttpResponseRedirect(reverse('base'))
+    context = {
+        'form_user': form
+    }
+    return render(request, 'upload_track.html', context)
+
 # def registration_employee_view(request):
 #     form = RegistrationEmployeeForm(request.POST or None, request.FILES or None)
 #     if form.is_valid():
@@ -126,12 +139,12 @@ def upload_track_view(request):
 
 @login_required
 def edit_employee_view(request,user_id):
-    user = User.objects.get(id=user_id)
+    user = get_object_or_404(User,id=user_id)
     form_user = EmployeeMainForm(request.POST or None, request.FILES or None, initial=model_to_dict(user), instance=user)
     if form_user.is_valid():
         new_user = form_user.save()
         new_user.save()
-        return HttpResponseRedirect(reverse('employee_list'))
+        return HttpResponseRedirect(reverse('base'))
     context = {
         'form_user': form_user,'user': user
     }
@@ -367,10 +380,10 @@ def delete_track(request, track_id):
 #         return HttpResponseRedirect(f'../lk-accepted-list/info-{comment_id}-comment')
 #     return render(request, 'comment_info.html', {'form': form,'disputs':disputs,'comment':comment,'comment_count':comment_count,'accept_count':accept_count})
 
-@login_required
-def employee_info(request, user_id):
-    user = User.objects.get(id=user_id)
-    return render(request, 'employee.html', {'user':user})
+# @login_required
+# def employee_info(request, user_id):
+#     user = User.objects.get(id=user_id)
+#     return render(request, 'employee.html', {'user':user})
 
 # @login_required
 # @user_passes_test(imp_check)
