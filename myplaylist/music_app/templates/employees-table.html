@@ -43,8 +43,8 @@
 								</a> {% else %}{% endif %}
 							</td>
 							<td>{{ forloop.counter }}</td>
-							<td>{{ employee.artist }}</td>
-							<td>{% if employee.image %} {{ employee.name }}{% else %}{% endif %}</td>
+							<td>{% if employee.artist %} {{ employee.artist }}{% else %}{% endif %}</td>
+							<td>{{ employee.name }}</td>
 							<td><audio src="{{ employee.audio_file.url }}" controls>Your browser does not support the audio element.</audio></td>
 							
 							<td>
