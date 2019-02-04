@@ -23,8 +23,7 @@
 				<table id="employees-table" class="table-appeal" data-detail-view="false" data-minimum-count-columns="2" data-pagination="true" data-id-field="id" data-show-footer="false">
 					<thead>
 					<tr>
-						<th>
-						</th>
+						
 						<th data-sortable="true" data-field="id">Номер</th>
 						<th data-sortable="true">Автор</th>
 						<th data-sortable="true">Название трека</th>
@@ -36,16 +35,14 @@
 					</thead>
 					<tbody>
 						{% for employee in employee_list reversed %}
-						<tr data-index="0">
-							<td>
-								{% if employee.image %}<a href="{{ employee.image.url }}">
-									<img src="{{ employee.image.url }}" alt class="d-block ui-w-30 rounded-circle">
-								</a> {% else %}{% endif %}
-							</td>
+						<tr data-index="{{ forloop.counter }}">
+							
 							<td><a href="{% url 'edit_track' employee.id %}">{{ forloop.counter }}</a></td>
 							<td>{% if employee.artist %} {{ employee.artist }}{% else %}{% endif %}</td>
 							<td>{{ employee.name }}</td>
-							<td><audio src="{{ employee.audio_file.url }}" controls>Your browser does not support the audio element.</audio></td>
+							<td><audio src="{{ employee.audio_file.url }}" controls>Your browser does not support the audio element.</audio>{% if employee.image %}<a href="{{ employee.image.url }}">
+									<img src="{{ employee.image.url }}" alt class="d-block ui-w-30 rounded-circle">
+								</a> {% else %}{% endif %}</td>
 							
 							<td>
 								<div>{{ employee.created_date.date }}</div>
