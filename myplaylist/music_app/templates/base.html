@@ -1,42 +1,88 @@
 {% load static %}
-<!doctype html>
-<html lang="ru">
+<!DOCTYPE html>
+<html lang="ru" class="material-style">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    
    {% block title %} <title>Title</title>{% endblock %}
 
-    <link rel="stylesheet" href="{% static "./css/styles.css" %}">
-    <link rel="stylesheet" href="{% static "./css/add_style.css" %}">
-    <link rel="stylesheet" href="{% static "./css/media.css" %}">
-    <link rel="stylesheet" href="{% static "./css/jquery.fancybox.min.css" %}">
+   <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static "favicon.ico" %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+
+    <!-- Icon fonts -->
+    <link rel="stylesheet" href="{% static "assets/vendor/fonts/fontawesome.css" %}">
+    <link rel="stylesheet" href="{% static "assets/vendor/fonts/ionicons.css" %}">
+    <link rel="stylesheet" href="{% static "assets/vendor/fonts/linearicons.css" %}">
+    <link rel="stylesheet" href="{% static "assets/vendor/fonts/open-iconic.css" %}">
+    <link rel="stylesheet" href="{% static "assets/vendor/fonts/pe-icon-7-stroke.css" %}">
+
+    <!-- Core stylesheets -->
+    <link rel="stylesheet" href="{% static "assets/vendor/css/rtl/bootstrap-material.css" %}" class="theme-settings-bootstrap-css">
+    <link rel="stylesheet" href="{% static "assets/vendor/css/rtl/appwork-material.css" %}" class="theme-settings-appwork-css">
+    <link rel="stylesheet" href="{% static "assets/vendor/css/rtl/theme-corporate-material.css" %}" class="theme-settings-theme-css">
+    <link rel="stylesheet" href="{% static "assets/vendor/css/rtl/colors-material.css" %}" class="theme-settings-colors-css">
+    <link rel="stylesheet" href="{% static "assets/vendor/css/rtl/uikit.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/custom.css" %}">
+
+    <script src="{% static "assets/vendor/js/material-ripple.js" %}"></script>
+    <script src="{% static "assets/vendor/js/layout-helpers.js" %}"></script>
+
+    <!-- Theme settings -->
+    <!-- This file MUST be included after core stylesheets and layout-helpers.js in the <head> section
+    <script src="{% static "assets/vendor/js/theme-settings.js" %}"></script>
+    <script>
+        window.themeSettings = new ThemeSettings({
+            cssPath: 'assets/vendor/css/rtl/',
+            themesPath: 'assets/vendor/css/rtl/'
+        });
+    </script>
+    -->
+    <!-- Core scripts -->
+    <script src="{% static "assets/vendor/js/pace.js" %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
-
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static "/apple-touch-icon.png" %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static "/favicon-32x32.png" %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static "/favicon-16x16.png" %}">
-    <link rel="manifest" href="{% static "/site.webmanifest" %}">
-    <link rel="mask-icon" href="{% static "/safari-pinned-tab.svg" %}" color="#da532c">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    	
         {% block script %}
-
+<!-- Libs -->
+    <link rel="stylesheet" href="{% static "assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" %}">
+    <!-- Page -->
         {% endblock %}
         
         
         </head>
-   {% block body %} <body>{% endblock %}
+   {% block body %} <body class="padding-top-navbar">
+<div class="page-loader">
+    <div class="bg-primary"></div>
+</div>{% endblock %}
     	{% block header %}
     		{% include "header.html" %}
     	{% endblock %}
-        {% block content %}<main style="background-image: url('{% static "./images/main-bg.jpg" %}'); background-size: cover; width: 100%;">
-</main>{% endblock %}
-        {% include "footer.html" %}
+        {% block content %}{% endblock %}
+        <script src="{% static "js/jquery-3.3.1.min.js" %}"></script>
+        {% block footer %}
+            {% include "footer.html" %}
+        {% endblock %}
+
+
+<!-- / Content -->
+
+<!-- Core scripts -->
+<script src="{% static "assets/vendor/libs/popper/popper.js" %}"></script>
+<script src="{% static "assets/vendor/js/bootstrap.js" %}"></script>
+<script src="{% static "assets/vendor/js/sidenav.js" %}"></script>
+<!-- Libs -->
+<script src="{% static "assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js" %}"></script>
+
+<!-- Custom -->
+
+{% block script2 %}{% endblock %}
+<script src="{% static "assets/js/main.js" %}"></script>
     </body>
 </html>

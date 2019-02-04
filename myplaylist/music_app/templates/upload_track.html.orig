@@ -17,7 +17,7 @@
 								<div class="card-body pb-2">
 {% for message in form_user.errors.values %}
                                     {{ message }}
-                                  {% endfor %}{# for message in form_user.errors.values #}
+                                  {% endfor %}
                                  
                                  
 							<div class="form-group">

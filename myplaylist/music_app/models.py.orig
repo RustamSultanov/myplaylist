@@ -9,11 +9,7 @@ class UserManager(BaseUserManager):
     instead of usernames. The default that's used is "UserManager"
     """
 
-    def _create_user(self,
-                     email,
-                     password,
-                     profile_picture=None,
-                     **extra_fields):
+    def _create_user(self, email, password, profile_picture=None, **extra_fields):
         """
         Creates and saves a User with the given email and password.
         """
@@ -60,5 +56,6 @@ class Track(AudioFile):
         (2, "Плохо"),
         (3, "Нормально"),
         (4, "Хорошо"),
-        (5, "Отлично"), )
+        (5, "Отлично"),
+        )
     rating = models.IntegerField(choices=RATING_CHOICE, default=5)

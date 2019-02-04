@@ -56,7 +56,7 @@
             <div class="form-group">
               {% for message in form.errors.values %}
                                     {{ message }}
-                                  {% endfor %}{# for message in form.errors.values #}
+                                  {% endfor %}
               <label class="form-label d-flex justify-content-between align-items-end">
                 <div>Пароль</div>
             
