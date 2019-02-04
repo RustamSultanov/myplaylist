@@ -28,6 +28,7 @@
 						<th data-sortable="true">Автор</th>
 						<th data-sortable="true">Название трека</th>
 						<th ></th>
+						<th ></th>
 						<th>Дата загрузки</th>
 						<th data-sortable="true">Рейтинг</th>
 						<th>Действие</th>
@@ -40,10 +41,12 @@
 							<td><a href="{% url 'edit_track' employee.id %}">{{ forloop.counter }}</a></td>
 							<td>{% if employee.artist %} {{ employee.artist }}{% else %}{% endif %}</td>
 							<td>{{ employee.name }}</td>
-							<td><audio src="{{ employee.audio_file.url }}" controls>Your browser does not support the audio element.</audio>{% if employee.image %}<a href="{{ employee.image.url }}">
+							<td><audio src="{{ employee.audio_file.url }}" controls>Your browser does not support the audio element.</audio></td>
+							<td>
+								{% if employee.image %}<a href="{{ employee.image.url }}">
 									<img src="{{ employee.image.url }}" alt class="d-block ui-w-30 rounded-circle">
-								</a> {% else %}{% endif %}</td>
-							
+								</a> {% else %}{% endif %}
+							</td>
 							<td>
 								<div>{{ employee.created_date.date }}</div>
 								<div>{{ employee.created_date.time }}</div>
