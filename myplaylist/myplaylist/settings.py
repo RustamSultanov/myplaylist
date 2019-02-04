@@ -148,7 +148,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-STATIC_ROOT = '../static/'
+STATIC_ROOT = '/root/myplaylist/myplaylist/'
 
 if DEBUG:
     INTERNAL_IPS = ('127.0.0.1',)
