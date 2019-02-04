@@ -35,7 +35,7 @@
 					</tr>
 					</thead>
 					<tbody>
-						{% for employee in employee_list %}
+						{% for employee in employee_list reversed %}
 						<tr data-index="0">
 							<td>
 								{% if employee.image %}<a href="{{ employee.image.url }}">
