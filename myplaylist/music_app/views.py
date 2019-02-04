@@ -42,7 +42,7 @@ def edit_track_view(request, track_id):
         new_user = form.save()
         new_user.save()
         return HttpResponseRedirect(reverse('base'))
-    context = {'form_user': form}
+    context = {'form_user': form,'track':track}
     return render(request, 'edit_track.html', context)
 
 
