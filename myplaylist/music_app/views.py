@@ -102,7 +102,7 @@ def upload_track_view(request):
 @login_required
 def edit_track_view(request,track_id):
     track = get_object_or_404(Track,id=track_id,user=request.user)
-    form = UploadTrackForm(request.POST or None, request.FILES or None, initial=model_to_dict(track), instance=track)
+    form = EditTrackForm(request.POST or None, request.FILES or None, initial=model_to_dict(track), instance=track)
     if form.is_valid():
         new_user = form.save()
         new_user.save()
@@ -110,7 +110,7 @@ def edit_track_view(request,track_id):
     context = {
         'form_user': form
     }
-    return render(request, 'upload_track.html', context)
+    return render(request, 'edit_track.html', context)
 
 # def registration_employee_view(request):
 #     form = RegistrationEmployeeForm(request.POST or None, request.FILES or None)
