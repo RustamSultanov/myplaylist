@@ -9,35 +9,37 @@ class UserManager(BaseUserManager):
     A custom user manager to deal with emails as unique identifiers for auth
     instead of usernames. The default that's used is "UserManager"
     """
-
-    def _create_user(self,
-                     email,
-                     password,
-                     profile_picture=None,
-                     **extra_fields):
+     def create_user(self, email, profile_picture=None, password=None):
         """
-        Creates and saves a User with the given email and password.
+        Creates and saves a User with the given email, date of
+        birth and password.
         """
         if not email:
-            raise ValueError('The Email must be set')
-        email = self.normalize_email(email)
-        user = self.model(email=email, **extra_fields)
+            raise ValueError('Users must have an email address')
+
+        user = self.model(
+            email=self.normalize_email(email),
+            profile_picture=profile_picture,
+        )
+
         user.set_password(password)
-        user.profile_picture = profile_picture
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, password, **extra_fields):
-        extra_fields.setdefault('is_staff', True)
-        extra_fields.setdefault('is_superuser', True)
-        extra_fields.setdefault('is_active', True)
-
-        if extra_fields.get('is_staff') is not True:
-            raise ValueError('Superuser must have is_staff=True.')
-        if extra_fields.get('is_superuser') is not True:
-            raise ValueError('Superuser must have is_superuser=True.')
-        return self._create_user(email, password, **extra_fields)
-
+    def create_superuser(self, email, profile_picture=None, password):
+        """
+        Creates and saves a superuser with the given email, date of
+        birth and password.
+        """
+        user = self.create_user(
+            email,
+            password=password,
+            profile_picture=profile_picture,
+        )
+        user.is_admin = True
+        user.save(using=self._db)
+        return user
+    
 
 class User(AbstractUser):
     email = models.EmailField(max_length=254, unique=True)
@@ -45,6 +47,24 @@ class User(AbstractUser):
         upload_to='user_data/profile_picture', null=True, blank=True)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
+
+    objects = UserManager()
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
+    
+
+    def __str__(self):
+        return self.email
+
+    def has_perm(self, perm, obj=None):
+        # Simplest possible answer: Yes, always
+        return True
+
+    def has_module_perms(self, app_label):
+        # Simplest possible answer: Yes, always
+        return True
 
     @property
     def is_staff(self):
@@ -54,14 +74,6 @@ class User(AbstractUser):
         return self.email
 
     def get_short_name(self):
-        return self.email
-
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
-
-    objects = UserManager()
-
-    def __str__(self):
         return self.email
 
 
