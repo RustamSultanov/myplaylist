@@ -83,8 +83,9 @@
 					</div>
 
 					<div class="text-right mt-3">
-						<input value="Сохранить" type="submit" class="btn btn-success">&nbsp;
+					{% block button %}	<input value="Сохранить" type="submit" class="btn btn-success">&nbsp;
 					<a href="{% url 'edit_employee' user.id %}">	<button type="button" class="btn btn-danger">Отменить</button></a>
+					{% endblock %}
 					</div>
 				</div></form>
 				<!-- / Content -->
