@@ -20,7 +20,7 @@ class UserAdmin(BaseUserAdmin):
         (None, {'fields': ('email', 'password')}),
         ('Personal info', {
                  'fields': (
-                     'profile_picture','firstname','lastname'   )}),
+                     'profile_picture','first_name','last_name'  )}),
         ('Permissions', {'fields': ('is_admin',)}),
     )
     # add_fieldsets is not a standard ModelAdmin attribute. UserAdmin
