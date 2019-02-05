@@ -4,6 +4,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from .models import Track
 from django.db import models
 from audiofield.widgets import CustomerAudioFileWidget
+from django.contrib.auth.forms import ReadOnlyPasswordHashField
 
 User = get_user_model()
 
