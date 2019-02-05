@@ -26,5 +26,5 @@
 									{% endblock %}
 {% block file %}{% endblock %}
 {% block button %}	<input value="Сохранить" type="submit" class="btn btn-success">&nbsp;
-					<a href="{% url 'edit_track' track_id %}">	<button type="button" class="btn btn-danger">Отменить</button></a>
+					<a href="{% url 'edit_track' track.id %}">	<button type="button" class="btn btn-danger">Отменить</button></a>
 					{% endblock %}
