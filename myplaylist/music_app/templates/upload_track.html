@@ -47,3 +47,7 @@
 									</div>
 									
 									{% endblock %}
+									{% block btn %}
+									<input value="Загрузить" type="submit" class="btn btn-success">&nbsp;
+					<a href="{% url 'upload_track' %}">	<button type="button" class="btn btn-danger">Отменить</button></a>
+									{% endblock %}
