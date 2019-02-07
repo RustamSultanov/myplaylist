@@ -47,14 +47,10 @@
 									<img src="{{ track.image.url }}" alt class="d-block ui-w-30 rounded-circle">
 								</a> {% else %}{% endif %}{# if track.image #}
 							</td>
-							<td>
+							<td>{% load tz %}
 								<div>{{ track.created_date.date }}</div>
-								<div>{% load tz %}
-
-{% localtime on %}
-    {{ track.created_date.time }}
-{% endlocaltime %}
-								{% now "jS F Y H:i" %}</div>
+								<div>{{ track.created_date.time|localtime }}
+								{% now "jS F Y H:i O" %}</div>
 							</td>
 							<td>{% if track.rating == 5 %} 
 								<i class="ion ion-md-star text-warning"></i>
