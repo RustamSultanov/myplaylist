@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load tz %}
 {% block script %}
 <!-- Libs -->
 	<link rel="stylesheet" href="{% static "assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" %}">
@@ -49,8 +50,8 @@
 							</td>
 							<td>
 								<div>{{ track.created_date.date }}</div>
-								<div>{{ track.created_date.time }}
-								{% now "jS F Y H:i" %}</div>
+								<div>{{ track.created_date.time|localtime }}
+								</div>
 							</td>
 							<td>{% if track.rating == 5 %} 
 								<i class="ion ion-md-star text-warning"></i>
