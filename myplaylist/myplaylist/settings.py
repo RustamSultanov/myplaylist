@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'myplaylist',
     'music_app',
     'audiofield',
+    'tz_detect',
     
 ]
 
@@ -59,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'audiofield.middleware.threadlocals.ThreadLocals',
+    'tz_detect.middleware.TimezoneMiddleware',
 ]
 
 ROOT_URLCONF = 'myplaylist.urls'
