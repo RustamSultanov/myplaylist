@@ -128,7 +128,7 @@ CONVERT_TYPE_VALUE = 0
 
 LANGUAGE_CODE = 'ru-RU'
 
-TIME_ZONE = 'Europe/Moscow'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
